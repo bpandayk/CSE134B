@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Who is the best player in the NBA today?</h2>
+    <p> Select from the list below: </p>
+    <label for="SC30">Steph Curry</label>
+    <input type="radio" name="player" id="SC" value="SC"><br>
+    <label for="LBJ">LeBum James</label>
+    <input type="radio" name="player" id="LBJ" value="LBJ"><br>
+    <label for="KD">Kevin Durant</label>
+    <input type="radio" name="player" id="KD" value="KD"><br>
+    <label for="SC30">Steph Curry</label>
+    <input type="radio" name="player" id="SC1" value="SC1"><br>
+    <br>
+    <input type="submit" value="Submit">
+
+    <h3> You're right! Steph Curry is the best player in the game today! Here's why. </h3>
+
+    <iframe width="600" height="315" src="https://www.youtube.com/embed/gb0wmBUB4cg" frameborder="0" allowfullscreen></iframe>
+
+    <h3> Okay, my bad. I didn't mean to ignore your selection. Kevin Durant could also be the best right now. </h3>
+
+    <iframe width="600" height="315" src="https://www.youtube.com/embed/nOTzDvAzEYg" frameborder="0" allowfullscreen></iframe>
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
+      authDomain: "cse134b-team-alpha.firebaseapp.com",
+      databaseURL: "https://cse134b-team-alpha.firebaseio.com",
+      storageBucket: "cse134b-team-alpha.appspot.com",
+      messagingSenderId: "730498444325"
+    };
+    firebase.initializeApp(config);
+    </script>
+  </body>
+</html>
