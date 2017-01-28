@@ -3,31 +3,17 @@
   <Head>
     <meta charset="utf-8">
     <Title>MovieDex Team Page</Title>
-    <style>
-	  table, th, td {
-    	border: 1px solid black;
-    	border-collapse: collapse;
-	  }
-	  td {
-    	padding: 15px;
-	  }
-	  th {
-    	text-align: left;
-	  }
-	</style>
   </Head>
   <Body>
     <hr>
-    <h1><Center><b>MovieDex Team Members</b></Center></h1>
+    <h1 style="text-align: center"><b>MovieDex Team Members</b></h1>
     <hr>
-    <table border=1 width="100%">
+    <table style="border: 1px solid black; width: 100%">
       <tr>
-        <td width="35%">
-      	  <Center>
-        	<img src="https://avatarfiles.alphacoders.com/696/69633.jpg" width="150" height="150">
-          </Center>
+        <td style="text-align: center; width: 35%;border: 1px solid black;padding: 15px">
+        	<img src="https://avatarfiles.alphacoders.com/696/69633.jpg" alt="avatar" width="150" height="150">
         </td>
-        <td>
+        <td style="padding-left: 15px;border: 1px solid black">
       	  <p><b>Name:</b> Bibek Kshetri
           <br>
           <b>Email:</b>
@@ -41,12 +27,10 @@
         </td>
       </tr>
       <tr>
-        <td width="35%">
-      	  <Center>
-        	<img src="https://avatarfiles.alphacoders.com/696/69633.jpg" width="150" height="150">
-          </Center>
+        <td style="text-align: center; width: 35%;border: 1px solid black;padding: 15px">
+        	<img src="https://avatarfiles.alphacoders.com/696/69633.jpg" alt="avatar" width="150" height="150">
         </td>
-        <td>
+        <td style="padding-left: 15px;border: 1px solid black">
       	  <p><b>Name:</b> Ashish Pokharel
           <br>
           <b>Email:</b>
@@ -60,12 +44,10 @@
         </td>
       </tr>
       <tr>
-        <td width="35%">
-      	  <Center>
-        	<img src="https://avatarfiles.alphacoders.com/696/69633.jpg" width="150" height="150">
-          </Center>
+        <td style="text-align: center; width: 35%;border: 1px solid black;padding: 15px">
+        	<img src="https://avatarfiles.alphacoders.com/696/69633.jpg" alt="avatar" width="150" height="150">
         </td>
-        <td>
+        <td style="padding-left: 15px;border: 1px solid black">
       	  <p><b>Name:</b> Eric Duong
           <br>
           <b>Email:</b> erictduong@gmail.com;etduong@ucsd.edu
@@ -79,17 +61,17 @@
         </td>
       </tr>
     </table>
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
+      authDomain: "cse134b-team-alpha.firebaseapp.com",
+      databaseURL: "https://cse134b-team-alpha.firebaseio.com",
+      storageBucket: "cse134b-team-alpha.appspot.com",
+      messagingSenderId: "730498444325"
+    };
+    firebase.initializeApp(config);
+    </script>
   </Body>
-  <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
-  <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
-    authDomain: "cse134b-team-alpha.firebaseapp.com",
-    databaseURL: "https://cse134b-team-alpha.firebaseio.com",
-    storageBucket: "cse134b-team-alpha.appspot.com",
-    messagingSenderId: "730498444325"
-  };
-  firebase.initializeApp(config);
-  </script>
 </HTML>
