@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <h1> Email Login </h1>
+    <form action="login_page.asp" method="get" id="logForm">
+      <fieldset>
+        <legend>Login Information</legend>
+        <b>Username:</b> <input type="text" name="username" value="">
+        <select>
+          <optgroup label="Email Sites">
+          <option value="gmail">@gmail.com</option>
+          <option value="yahoo">@yahoo.com</option>
+          <option value="ucsd">@uscd.edu</option>
+        </select>
+        <br>
+        <b>Password:</b> <input type="password" name="password" value="">
+        <br>
+      </fieldset>
+    </form>
+    <p> Would you like to donate $5 to a local charity?</p>
+    <label for="yes">Yes</label>
+    <input type="radio" name="donation" id="yes" value="yes"><br>
+    <label for="no">No</label>
+    <input type="radio" name="donation" id="no" value="no"><br>
+    <br>
+    <input type="submit" value="Donate">
+    <input type="submit" form="logForm" value="Login" align="middle" formtarget="_blank">
+    <p>Click the "Login" button to log into your target email account.</p>
+     
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
+      authDomain: "cse134b-team-alpha.firebaseapp.com",
+      databaseURL: "https://cse134b-team-alpha.firebaseio.com",
+      storageBucket: "cse134b-team-alpha.appspot.com",
+      messagingSenderId: "730498444325"
+    };
+    firebase.initializeApp(config);
+    </script>
+  </body>
+</html>
