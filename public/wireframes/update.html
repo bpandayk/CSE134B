@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Update Movie</title>
+  </head>
+  <body>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="img/3.jpeg"  width="200" height="200">
+  <br>
+    <h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp MOVIEDEX </h1>
+    <br><br><br>
+    
+    <table> <tr>
+    <td>
+      
+       <form method="get" action="addmovie.html"> 
+       <input type = "submit" name="add" value="           + Add Movie         " />
+       </form> 
+      </td>
+      
+      <td>
+       <form method="get" action="search.html">
+      <input type = "submit" name="search" value="              Search             " />
+       </form> 
+      </td>
+      
+      <td>
+       <form method="get" action="viewmov.html">
+      <input type = "submit" name="view" value="          View My Movies           " />
+       </form> 
+      </td>
+      
+      <td>
+       <form method="get" action="logout.html">
+      <input type = "submit" name="logout" value="              Logout                 " />
+       </form> 
+      </td></tr>
+    </table>
+  <table cellspacing="5">
+    <tr>
+      <td> <img src="img/avatar.jpeg"  width="214" height="214">
+        <br>
+        Bibek Kshetri
+        <br><br>
+        Connections:<br>
+        Ahish Pokhrel <br>
+        Sohan Thapa <br>
+        Biraj Pandey <br>
+        Nuroj Adhikari <br>
+        Rojil Niraula <br>
+        
+       </td>
+        
+      <td rowspan="20" colspan="10">
+        <table border = "1" cellspacing="5">
+          <tr>
+          <th colspan="2">  View My Movies </th>
+          </tr>
+          <tr>
+          <td><img src="img/9.jpeg"  width="200" height="200"></td>
+          </tr>
+          <tr>
+          <td><h3>Ghost Busters</h3>
+          
+          <br><br>
+            Genre        : <select name="dropdown">
+							<option value="Action" selected>Action</option>
+							<option value="Comedy">Comedy</option>
+							<option value="Family">Drama</option>
+							<option value="Family">Science Fiction</option>
+							<option value="Family">Horror</option>
+							<option value="Family">Romance</option>
+							<option value="Family">Thriller</option>
+							<option value="Family">Fantasy</option>
+							<option value="Family">Adventure</option>
+							<option value="Family">Historical</option>
+							</select>
+            <br><br>
+            Ratings      : 1 <input type = "radio" name="rate" value="1"/>
+            2 <input type = "radio" name="rate" value="2"/>
+            3 <input type = "radio" name="rate" value="3"/>
+            4 <input type = "radio" name="rate" value="4"/>
+            5 <input type = "radio" name="rate" value="5"/>
+            <br><br>
+            Enjoyed?      : Yes <input type = "radio" name="enj" value="yes"/>
+            No <input type = "radio" name="enj" value="no"/>
+            <br><br>
+            Recommended By: <select name="dropdown">
+							<option value="Friends" selected>Friends</option>
+							<option value="Family">Family</option>
+							<option value="Family">Email</option>
+							<option value="Family">Advertisement</option>
+							<option value="Family">Internet</option>
+							</select>
+            <br><br>
+            Watched Date  :<input type = "date" name="date" value="mm/dd/yyyy"/>
+            <br><br>
+            Description </br>
+             <textarea rows="5" cols="50" name="description">
+             Enter description here...
+             </textarea>
+            <br><br>
+            Upload Image: <input type="file" name="fileupload" accept="image/*" />
+            <br><br>
+            <input type ="submit" name="update" value="   Update   " >
+            <br><br>
+          
+          </td></tr>
+               
+        </table>
+      </td>
+    </tr>
+  </table>
+  </body>
+  <footer>
+  <br><br><br><br>
+   &copy MovieDex Team
+  </footer>
+</html>
+
