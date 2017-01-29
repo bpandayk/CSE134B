@@ -2,13 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Welcome to MovieDex</title>
+    <title>Update Movie</title>
   </head>
   <body>
-  <h1> MOVIEDEX </h1>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="img/3.jpeg"  width="200" height="200">
+  <br>
+    <h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp MOVIEDEX </h1>
+    <br><br><br>
+    
+    <table> <tr>
+    <td>
+      
+       <form method="get" action="addmovie.html"> 
+       <input type = "submit" name="add" value="           + Add Movie         " />
+       </form> 
+      </td>
+      
+      <td>
+       <form method="get" action="search.html">
+      <input type = "submit" name="search" value="              Search             " />
+       </form> 
+      </td>
+      
+      <td>
+       <form method="get" action="viewmov.html">
+      <input type = "submit" name="view" value="          View My Movies           " />
+       </form> 
+      </td>
+      
+      <td>
+       <form method="get" action="logout.html">
+      <input type = "submit" name="logout" value="              Logout                 " />
+       </form> 
+      </td></tr>
+    </table>
   <table cellspacing="5">
     <tr>
-      <td colspan="5" rowspan="5"> <img src="avatar.jpg"  width="100" height="80">
+      <td> <img src="img/avatar.jpeg"  width="214" height="214">
         <br>
         Bibek Kshetri
         <br><br>
@@ -20,23 +54,19 @@
         Rojil Niraula <br>
         
        </td>
-      <td colspan="10">
-      <input type = "submit" name="add" value="  + Add Movie   " />
-      <input type = "submit" name="add" value="     Search     " />
-      <input type = "submit" name="add" value=" View My Movies " />
-      <input type = "submit" name="add" value="     Logout     " />
-      </td> 
-    </tr>
-    <tr>
-      <td >  </td>
+        
       <td rowspan="20" colspan="10">
         <table border = "1" cellspacing="5">
           <tr>
-          <th> Add Movie </th>
+          <th colspan="2">  View My Movies </th>
           </tr>
-          <tr><td>
-            Movie name   : <input type = "text" name="movname" value="Movie name" />
-            <br><br>
+          <tr>
+          <td><img src="img/9.jpeg"  width="200" height="200"></td>
+          </tr>
+          <tr>
+          <td><h3>Ghost Busters</h3>
+          
+          <br><br>
             Genre        : <select name="dropdown">
 							<option value="Action" selected>Action</option>
 							<option value="Comedy">Comedy</option>
@@ -76,9 +106,11 @@
             <br><br>
             Upload Image: <input type="file" name="fileupload" accept="image/*" />
             <br><br>
-            <input type ="submit" name="add" value="   Add Movie   " >
+            <input type ="submit" name="update" value="   Update   " >
             <br><br>
+          
           </td></tr>
+               
         </table>
       </td>
     </tr>
