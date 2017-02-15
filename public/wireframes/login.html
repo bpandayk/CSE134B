@@ -1,40 +1,69 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Day 001 Login Form</title>
 
-    <title>Login</title>
-  </head>
-  <body>
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="img/3.jpeg"  width="200" height="200">
-  <br>
-    <h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp MOVIEDEX </h1>
-    <br><br><br>
-  <table border="1" cellpadding="5" cellspacing="5" width="200">
-    <tr><th>LOGIN</tr></th>
-    <tr><td>
-      <form method="get" action="viewmov.html">
-        Username / Email
-        <br>
-        <input type="text" name="user_name" />
-        <br><br>
-        Password
-        <br>
-        <input type="password" name="password" />
-        <br>
-        <input type = "submit" name="submit" value="submit" />
-        <a href = "recover.html"> Forget Password? </a>
-      </form>
-    </td></tr>
-  </table>
-  </body>
-  <footer>
-  <br><br><br><br>
-   &copy MovieDex Team
-  </footer>
+    <link rel="stylesheet" href="../styles/login.css">
+  
+</head>
+
+<body class="bgimage">
+  <div class="signin-wrap">
+  <div class="signin-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+    <div class="signin-form">
+      <div class="sign-in-htm">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="user" type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign In">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk w3-hover-text-light-blue">
+          <a href="#forgot">Forgot Password?</a>
+        </div>
+      </div>
+      <div class="sign-up-htm">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="user" type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Repeat Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Email Address</label>
+          <input id="pass" type="text" class="input">
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign Up">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk w3-hover-text-light-blue">
+          <label for="tab-1">Already Member?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+</body>
 </html>
-

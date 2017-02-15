@@ -2,7 +2,7 @@
 
  */ 
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans",sans-serif}
 body, html {
     height: 100%;
     line-height: 1.8;
@@ -10,11 +10,12 @@ body, html {
 
 
 .bgimage {
+	opacity: 0.80;
     background-position: center;
     background-size: cover;
-    background-image: url("Movies.jpg");
+    background-image: url("images/Movies.jpg");
     background-repeat: no-repeat;
-    min-height: 100px;
+    min-height: 300px;
     text-shadow: 5px 5px 10px #FFF;
 }
 .navbar li a {padding: 16px;float: left;}
@@ -30,13 +31,18 @@ body, html {
 .hide-small{display:none!important}
 .padding-16{padding-top:16px!important;padding-bottom:16px!important}
 
-.text-white{color:#fff;}
+.main-text{
+	opacity: 0.80;
+	color:#fff;}
 .w3-large{font-size:18px!important}
 .w3-margin-top{margin-top:16px!important}
 .w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
-.getstarted-btn{ 
-	border:none;display:inline-block;outline:0;padding:6px 26px;vertical-align:middle;overflow:hidden;text-decoration:none!important;color:#fff;background-color:#000;text-align:center;cursor:pointer;white-space:nowrap}
-.getstarted-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.getstarted-btn{
+	opacity: 0.5;
+	border:none;display:inline-block;outline:0;padding:6px 36px;vertical-align:middle;overflow:hidden;text-decoration:none!important;color:#fff;background-color:#000;text-align:center;cursor:pointer;white-space:nowrap}
+.getstarted-btn:hover{
+	opacity: 1;
+	box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
 .login-link{
 	position: absolute;
 	text-decoration: none!important;
