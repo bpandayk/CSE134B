@@ -3,66 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to MovieDex</title>
+    <link rel="stylesheet" href="../styles/addmovie.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
   </head>
-  <body>
-
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="img/3.jpeg"  width="200" height="200">
+  <body class="bgimage">
   <br>
-    <h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp MOVIEDEX </h1>
-    <br><br><br>
-    
-     <table> <tr>
-    <td>
-      
-       <form method="get" action="addmovie.html"> 
-       <input type = "submit" name="add" value="           + Add Movie         " />
-       </form> 
-      </td>
-      
-      <td>
-       <form method="get" action="search.html">
-      <input type = "submit" name="search" value="              Search             " />
-       </form> 
-      </td>
-      
-      <td>
-       <form method="get" action="viewmov.html">
-      <input type = "submit" name="view" value="          View My Movies           " />
-       </form> 
-      </td>
-      
-      <td>
-       <form method="get" action="logout.html">
-      <input type = "submit" name="logout" value="              Logout                 " />
-       </form> 
-      </td></tr>
-    </table>
-    
-  <table cellspacing="5">
-    <tr>
-      <td colspan="5" rowspan="5"> <img src="img/avatar.jpeg"  width="214" height="214">
-
-        <br>
-        Bibek Kshetri
-        <br><br>
-        Connections:<br>
-        Ahish Pokhrel <br>
-        Sohan Thapa <br>
-        Biraj Pandey <br>
-        Nuroj Adhikari <br>
-        Rojil Niraula <br>
-        
-       </td>
-
-          
-
-      <td >  </td>
-      <td rowspan="20" colspan="10">
-        <table border = "1" cellspacing="5">
+  <div id="head1">
+    <p>MOVIEDEX</p>
+  </div>
+  <div class="w3-container navbar">
+    <ul class="w3-navbar w3-border w3-round w3-light-grey">
+        <li><a class="w3-border-right" href="./userhome.html">Home</a></li>
+        <li><a class="w3-border-right" href="./addmovie.html">Add Movie</a></li>
+        <li><a class="w3-border-right" href="./search.html">Search</a></li>
+        <li><a class="w3-border-right" href="./viewmov.html">My Movies</a></li>
+        <li><a class="w3-border-right" href="./logout.html">Logout</a></li>
+      </ul>
+  </div>
+  <div class="wrapper">
+  <div class="column info-html">
+    <table id="infoTable" cellspacing="5" border="2px solid black">
+      <tr>
+        <td>
+          <img src="img/avatar.jpeg"  width="214" height="214">
+          <br><br>
+          <div class="names">
+          <p>Bibek Kshetri
+          <br><br>
+          <div id="cons">Connections:</div><br>
+          Ahish Pokhrel <br>
+          Sohan Thapa <br>
+          Biraj Pandey <br>
+          Nuroj Adhikari <br>
+          Rojil Niraula <br></p>
+        </div>
+        </td>
+     </table>
+   </div>
+        <table class="column add" border = "1" cellspacing="5">
           <tr>
           <th> Add Movie </th>
           </tr>
@@ -112,13 +90,9 @@
             <br><br>
           </td></tr>
         </table>
-      </td>
-    </tr>
-  </table>
+      </div>
   </body>
   <footer>
-  <br><br><br><br>
    &copy MovieDex Team
   </footer>
 </html>
-

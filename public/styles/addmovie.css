@@ -1,0 +1,75 @@
+body{
+
+}
+
+@font-face {
+  font-family: titleFont;
+  src: url("fonts/york.ttf");
+}
+
+@font-face {
+  font-family: font2;
+  src: url("fonts/as.ttf");
+}
+
+.bgimage {
+  opacity: 1.0;
+  background: url("images/cut.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
+
+.navbar {
+  font-family: font2;
+  font-size: 20px;
+}
+
+.column {
+  float: left;
+  padding: 15px;
+}
+
+.wrapper.before {
+  content:'';
+  display:table
+}
+
+.wrapper.after {
+  clear: both;
+}
+
+.info-html {
+  width: 25%;
+}
+
+.add {
+  width: 75%;
+}
+
+.names {
+  font-family: font2;
+  text-align: center;
+}
+
+#head1 {
+  font-family: titleFont;
+  font-size: 80px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  float: left;
+  height: 35px;
+  margin: 0px 50px 0px 0px;
+  color: white;
+  text-align: left;
+  padding: 10px 30px;
+  width: 180px;
+  font-family: titleFont;
+}
