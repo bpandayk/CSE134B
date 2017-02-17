@@ -3,62 +3,71 @@
   <Head>
     <meta charset="utf-8">
     <Title>MovieDex Team Page</Title>
+    <link rel="stylesheet" href="./styles/team.css">
   </Head>
-  <Body>
-    <hr>
-    <h1 style="text-align: center"><b>MovieDex Team Members</b></h1>
-      <a href="index.html">Home</a>
-    <hr>
-    <table style="border: 1px solid black; width: 100%">
+  <Body class="bgimage">
+    <h1>Meet Our Team</h1>
+    <div id="home">
+      <a id="homeBtn" href="index.html">Home</a>
+    </div>
+    <table>
+      <div id="avs">
       <tr>
-        <td style="text-align: center; width: 35%;border: 1px solid black;padding: 15px">
-        	<img src="img/profile.jpeg" alt="avatar" width="150" height="150">
+        <td>
+        	<img class="avatars" src="img/profile.jpeg" alt="avatar" width="150" height="150">
         </td>
-        <td style="padding-left: 15px;border: 1px solid black">
-      	  <p><b>Name:</b> Bibek Kshetri
+        <td>
+        	<img class="avatars" src="img/ashish.jpg" alt="avatar" width="150" height="150">
+        </td>
+        <td>
+        	<img class="avatars" src="https://avatarfiles.alphacoders.com/696/69633.jpg" alt="avatar" width="150" height="150">
+        </td>
+      </tr>
+    </div>
+      <tr>
+        <td class="name" id="bibekTag">
           <br>
+      	  <p class="name">Bibek Kshetri</p>
+          <br>
+        </td>
+        <td class="name ashish" id="ashishTag">
+          <br>
+      	  <p class="name">Ashish Pokharel</p>
+          <br>
+        </td>
+        <td class="name eric" id="ericTag">
+          <br>
+      	  <p class="name">Eric Duong</p>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="info bibek">
+          <p>
           <b>Email:</b> bpandayk@ucsd.edu
           <br>
-          <b>Year/Major:</b> 4th year/ Computer Science
-          <br>
-          <b>Motivations:</b>
+          <b>Year/Major:</b> 4<sup>th</sup>/Computer Science
           <br>
           <b>Favorite Movie(s):</b> Marvel movies, Intersteller
       	  </p>
         </td>
-      </tr>
-      <tr>
-        <td style="text-align: center; width: 35%;border: 1px solid black;padding: 15px">
-        	<img src="img/ashish.jpg" alt="avatar" width="150" height="150">
-        </td>
-        <td style="padding-left: 15px;border: 1px solid black">
-      	  <p><b>Name:</b> Ashish Pokharel
-          <br>
+        <td class="info ashish">
+          <p>
           <b>Email:</b> apokhare@ucsd.edu
           <br>
-          <b>Year/Major:</b>4<sup>th</sup> /Computer Science
+          <b>Year/Major:</b> 4<sup>th</sup>/Computer Science
           <br>
-          <b>Motivations:</b>
-          <br>
-          <b>Favorite Movie(s):</b>Fight Club, Oceans 11, 12, 13
+          <b>Favorite Movie(s):</b> Fight Club, Oceans 11, 12, 13
       	  </p>
         </td>
-      </tr>
-      <tr>
-        <td style="text-align: center; width: 35%;border: 1px solid black;padding: 15px">
-        	<img src="https://avatarfiles.alphacoders.com/696/69633.jpg" alt="avatar" width="150" height="150">
-        </td>
-        <td style="padding-left: 15px;border: 1px solid black">
-      	  <p><b>Name:</b> Eric Duong
-          <br>
-          <b>Email:</b> erictduong@gmail.com;etduong@ucsd.edu
-          <br>
-          <b>Year/Major:</b> 4th/Computer Science
-          <br>
-          <b>Motivations:</b> Learning how to create web applications is, I feel, an incredibly useful skill. I'm also trying to gain experience with HTML and CSS.
-          <br>
-          <b>Favorite Movie(s):</b> The Dark Knight, The Conjuring 2, Sicario
-      	  </p>
+        <td class="info eric">
+          <p>
+            <b>Email:</b> etduong@ucsd.edu
+            <br>
+            <b>Year/Major:</b> 4<sup>th</sup>/Computer Science
+            <br>
+            <b>Favorite Movie(s):</b> The Dark Knight, The Conjuring 2, Sicario
+        	  </p>
         </td>
       </tr>
     </table>

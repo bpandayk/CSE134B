@@ -1,0 +1,59 @@
+body{
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url("fonts/tl.ttf");
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: myFirstFont;
+  font-size: 72px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  color: white;
+  width: 33%;
+}
+
+td.name {
+  padding: 0px;
+  font-family: myFirstFont;
+  font-size: 32px;
+}
+
+p.name {
+  padding: 10px;
+  border: 2px double white;
+}
+
+#home {
+  text-align: center;
+  font-family: myFirstFont;
+}
+
+#avs {
+  padding-top: 20px;
+}
+
+.bgimage {
+  opacity: 1.0;
+  background: url("images/teamBG.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.avatars {
+  border-radius: 50%;
+  border-style: groove;
+  border-color: white;
+}
