@@ -1,0 +1,53 @@
+body{
+    height: 100%;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url("fonts/york.ttf");
+}
+
+#msg {
+  text-align: center;
+  color: white;
+  font-family: myFirstFont;
+  font-size: 48px;
+}
+
+a:link, a:visited, a:active {
+  color: inherit;
+}
+
+a:hover {
+  background-color: #555;
+}
+
+#home {
+  text-align: center;
+  color: white;
+  font-family: myFirstFont;
+  font-size: 108px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  float: left;
+  height: 35px;
+  margin: 0px 50px 0px 0px;
+  color: white;
+  text-align: left;
+  padding: 10px 30px;
+  width: 180px;
+  font-family: myFirstFont;
+}
+
+
+.bgimage {
+  opacity: 1.0;
+  background: url("images/back.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
