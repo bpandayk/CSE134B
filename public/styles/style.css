@@ -80,7 +80,7 @@ a{color:inherit;text-decoration:none}
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 
-.w3-hover-text-light-blue:hover{color:rgba(0,255,255,0.6)!important}
+.onHoverChange:hover{color:rgba(0,255,255,0.6)!important}
 .button{font-size: 16px;}
 .button:hover{
 	opacity: 1;
@@ -109,12 +109,12 @@ a{color:inherit;text-decoration:none}
 }
 .signin-html .sign-in,
 .signin-html .sign-up,
-.signin-form .group .check{
+.signin-form .combine-all .check{
 	display:none;
 }
 .signin-html .tab,
-.signin-form .group .label,
-.signin-form .group .button{
+.signin-form .combine-all .label,
+.signin-form .combine-all .button{
 	text-transform:uppercase;
 }
 .signin-html .tab{
@@ -138,36 +138,36 @@ a{color:inherit;text-decoration:none}
 	-webkit-transform-style:preserve-3d;
 	        transform-style:preserve-3d;
 }
-.signin-form .group{
+.signin-form .combine-all{
 	margin-bottom:15px;
 }
-.signin-form .group .label,
-.signin-form .group .input,
-.signin-form .group .button{
+.signin-form .combine-all .label,
+.signin-form .combine-all .input,
+.signin-form .combine-all .button{
 	width:100%;
 	color:#aaa;
 	display:block;
 }
-.signin-form .group .input,
-.signin-form .group .button{
+.signin-form .combine-all .input,
+.signin-form .combine-all .button{
 	border:none;
 	padding:15px 20px;
 	border-radius:2px;
 	background:rgba(255,255,255,.1);
 }
-.signin-form .group input[data-type="password"]{
+.signin-form .combine-all input[data-type="password"]{
 	text-security:circle;
 	-webkit-text-security:circle;
 }
-.signin-form .group .label{
+.signin-form .combine-all .label{
 	color:#aaa;
 	font-size:12px;
 }
-.signin-form .group .button{
+.signin-form .combine-all .button{
 	background:#000;
 }
 
-.signin-form .group label .icon{
+.signin-form .combine-all label .icon{
 	width:15px;
 	height:15px;
 	border-radius:2px;
@@ -176,17 +176,17 @@ a{color:inherit;text-decoration:none}
 	background:rgba(255,255,255,.1);
 }
 
-.signin-form .group .check:checked + label{
+.signin-form .combine-all .check:checked + label{
 	color:#aaa;
 }
-.signin-form .group .check:checked + label .icon{
+.signin-form .combine-all .check:checked + label .icon{
 	background:rgba(0,255,255,0.6);
 }
-.signin-form .group .check:checked + label .icon:before{
+.signin-form .combine-all .check:checked + label .icon:before{
 	-webkit-transform:scale(1) rotate(45deg);
 	        transform:scale(1) rotate(45deg);
 }
-.signin-form .group .check:checked + label .icon:after{
+.signin-form .combine-all .check:checked + label .icon:after{
 	-webkit-transform:scale(1) rotate(-45deg);
 	        transform:scale(1) rotate(-45deg);
 }
@@ -204,7 +204,7 @@ a{color:inherit;text-decoration:none}
 	margin:50px 0px 50px 0;
 	background:rgba(0,255,255,.2);
 }
-.foot-lnk {
+.footer1 {
 	padding-bottom: 20px;
 	text-align:center;
 }
