@@ -1,35 +1,4 @@
-body{
 
-}
-
-@font-face {
-  font-family: titleFont;
-  src: url("fonts/york.ttf");
-}
-
-@font-face {
-  font-family: font2;
-  src: url("fonts/as.ttf");
-}
-
-.bgimage {
-  opacity: 1.0;
-  background: url("images/cut.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: 100% 100%;
-}
-
-.navbar {
-  font-family: font2;
-  font-size: 20px;
-}
-
-.column {
-  float: left;
-  padding: 15px;
-}
 
 .wrapper.before {
   content:'';
