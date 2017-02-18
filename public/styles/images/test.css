@@ -1,3 +1,98 @@
+@font-face {
+  font-family: titleFont;
+  src: url("Prototype.ttf");
+}
+
+body {
+  background: black url("bodybg1.jpg") no-repeat fixed top;
+  background-size: 900px;
+
+
+}
+
+.nav {
+  top:0%;
+  width:100%;
+  background-color: #09233d;
+  font-family:Copperplate,Copperplate Gothic Light,fantasy;
+  font-size: 20px; 
+  position: fixed; 
+  width: 100%
+}
+
+.title {
+  font-family: "titleFont";
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  padding-left :500px;
+  padding-right : 50px;
+
+}
+
+.drop {
+  font-family: "titleFont";
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  padding-left :100px;
+}
+
+
+ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+
+li {
+  float: left;
+} 
+
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+} 
+
+.li1 a:hover {
+  background-color: #147ea8;
+}
+
+.drop-down {
+    display: none;
+    position: absolute;
+    background-color: #09233d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.drop-down a {
+    font-family:Copperplate,Copperplate Gothic Light,fantasy;
+    font-size:15px;
+    font-weight:bold;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.drop-down a:hover {
+  background-color: #147ea8;
+}
+
+
+.li2:hover .drop-down {
+    display: block;
+}
+
 
 .sub-container {
   top:60px;
