@@ -13,7 +13,7 @@ body {
 .nav {
   top:0%;
   width:100%;
-  background-color: grey;
+  background-color: #09233d;
   font-family:Copperplate,Copperplate Gothic Light,fantasy;
   font-size: 20px; 
   position: fixed; 
@@ -61,13 +61,13 @@ li a {
 } 
 
 .li1 a:hover {
-  background-color: #111;
+  background-color:#147ea8;
 }
 
 .drop-down {
     display: none;
     position: absolute;
-    background-color: grey;
+    background-color: #09233d;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -85,7 +85,7 @@ li a {
 }
 
 .drop-down a:hover {
-  background-color: green
+  background-color: #147ea8
 }
 
 
