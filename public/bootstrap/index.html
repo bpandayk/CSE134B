@@ -2,87 +2,37 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>MovieDex-Login</title>
+  <title>MovieDex-Login-Using Bootstrap</title>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   
 </head>
+<body>
+  <header class="navbar-inverse" role = "banner">
+      <div class="container">
+        <nav role= "navigation" >
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MovieDex</a>
+            </div>
 
-<body class="bgimage">
-  <div id="head1">
-    <p>MOVIEDEX</p>
-  </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-  <div class="signin-wrap">
-  <div class="signin-html">
-    <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-      <label for="tab-1" class="tab">Sign In</label>
-    <input id="tab-2" type="radio" name="tab" class="sign-up">
-      <label for="tab-2" class="tab">Sign Up</label>
-
-    <div class="signin-form">
-      <div class="sign-in-htm">
-
-        <div class="combine-all">
-          <label for="user" class="label">Username</label>
-          <input id="user" type="text" class="input">
-        </div>
-
-        <div class="combine-all">
-          <label for="pass" class="label">Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
-        </div>
-
-        <div class="combine-all">
-          <input id="check" type="checkbox" class="check" checked>
-          <label for="check">
-            <span class="icon"></span> Keep me Signed in</label>
-        </div>
-
-        <div class="combine-all">
-          <input type="submit" class="button" value="Sign In">
-        </div>
-
-        <div class="hr"></div>
-        <div class="footer1 onHoverChange">
-          <a href="#forgot">Forgot Password?</a>
-        </div>
-        
-      </div>
-      <div class="sign-up-htm">
-        <div class="combine-all">
-          <label for="user" class="label">Username</label>
-          <input id="user" type="text" class="input">
-        </div>
-
-        <div class="combine-all">
-          <label for="pass" class="label">Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
-        </div>
-
-        <div class="combine-all">
-          <label for="pass" class="label">Repeat Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
-        </div>
-
-        <div class="combine-all">
-          <label for="pass" class="label">Email Address</label>
-          <input id="pass" type="text" class="input">
-        </div>
-
-        <div class="combine-all">
-          <input type="submit" class="button" value="Sign Up">
-        </div>
-
-        <div class="hr"></div>
-        <div class="footer1 onHoverChange">
-          <label for="tab-1">Already Member?</a>
-        </div>
-
-      </div>
+            </div><!-- /.navbar-collapse -->
+        </nav>
     </div>
-  </div>
-</div>
+  </header>
   
   
 </body>
