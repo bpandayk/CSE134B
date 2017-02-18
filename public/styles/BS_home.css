@@ -1,0 +1,68 @@
+body{
+
+}
+
+@font-face {
+  font-family: titleFont;
+  src: url("fonts/york.ttf");
+}
+
+@font-face {
+  font-family: font2;
+  src: url("fonts/as.ttf");
+}
+
+.bgimage {
+  opacity: 1.0;
+  background: url("images/cut.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
+
+.welcome {
+  font-family: titleFont;
+  color: white;
+  text-align: center;
+  font-size: 70px;
+}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+td {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 2px double white;
+}
+
+tr {
+
+}
+
+.movieHead {
+  text-align: center;
+  color: white;
+  border: 2px double white;
+  font-family: titleFont;
+  font-size: 25px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  float: left;
+  height: 35px;
+  margin: 0px 50px 0px 0px;
+  color: white;
+  text-align: left;
+  padding: 10px 30px;
+  width: 180px;
+  font-family: titleFont;
+}
