@@ -115,3 +115,14 @@
   padding: 20px;
 }
 
+img {
+  border-style:solid;
+  border-color: white;
+
+} 
+
+img:hover{
+  border-style:solid;
+  border-color: yellow;
+}
+

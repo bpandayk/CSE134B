@@ -1,0 +1,14 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/bin/node /usr/bin/firebase serve
+[debug] CLI Version:  3.2.3
+[debug] Platform:     linux
+[debug] Node Version: v6.9.5
+[debug] Time:         Sat Feb 18 2017 10:56:54 GMT-0800 (PST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /home/bkshetri/Desktop/CSE134B
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000
