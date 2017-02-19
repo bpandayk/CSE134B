@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		   <link rel="stylesheet" href="../styles/bootstrap/bootstrap.min.css">
+       <link rel="stylesheet" href="./css/BS_login.css">
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		<title>Login</title>
+
+</head>
+<body>
+  <header class="navbar navbar-inverse">
+     <div class="container">
+
+       <nav role = "navigation">
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="#">MovieDex</a>
+           </div>
+
+           <ul class="nav navbar-nav">
+                <li class="active"><a href="#"> a<span class="sr-only">(current)</span></a></li> 
+
+                  <li class="li1"><a href="viewmov.html">My Movies</a></li>
+                  <li class="li1"><a href="addmovie.html">Add Movies</a></li>
+                  <li class="li1"><form class="navbar-form navbar-left" role="search">
+                                   <div class="form-group">
+                                     <input type="text" class="form-control" placeholder="Search">
+                                   </div>
+                                   <button type="submit" class="btn btn-primary">Search</button>
+                                 </form>
+                  </li>
+                  <li class="li3">&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+
+                  <li class="li2"><a href="#"><span class="drop glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp&nbspAnonymous</span></a>
+
+                 </li>
+                 <li class="li3">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+                 <li class="li3"><a href="login.html"><span class="drop glyphicon glyphicon-lock" aria-hidden="true">&nbspLogout</span></a></li>
+
+             </ul>
+         </nav>
+     </div>
+  </header>
+
+     <!-- start div container after header -->
+     <div class="jumbotron">
+      <div class="container">
+        <h1 class="head">Welcome to MovieDex!</h1>
+        <p class="subtext">Your one stop shop for all cinematic needs!</p>
+      </div>
+     </div>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+	      <div class="panel-title text-center">
+	        <hr/>
+	      </div>
+	    </div>
+			<div class="main-login main-center">
+				<form class="form-horizontal" method="post" action="#">
+					<div class="form-group group1">
+						<label for="username" class="cols-sm-2 control-label">Username</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<input type="text" class="form-control" name="username" id="username"  placeholder="Enter Username"/>
+							</div>
+						</div>
+					</div>
+					<div class="form-group group1">
+						<label for="password" class="cols-sm-2 control-label">Password</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<input type="password" class="form-control" name="password" id="password"  placeholder="Enter Password"/>
+							</div>
+						</div>
+					</div>
+					<div class="form-group ">
+            <input type="checkbox" checked="checked"> Remember Me
+            <br>
+						<a href="viewmov.html"><button type="button" class="btn btn-primary btn-lg btn-block login-button">Login</button></a>
+            <br>
+            <span class="psw">Forgot Password?</a></span>
+          </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
