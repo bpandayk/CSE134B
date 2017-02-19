@@ -1,0 +1,97 @@
+body {
+	background: gray;
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+h1, h2, h3 {
+	font-weight: bold;
+  color: black;
+}
+
+.tab {
+	font-weight: bold;
+	background-color: white;
+	border: 5px single black;
+	height: 100%;
+}
+
+th {
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+
+p {
+	font-size: 18px;
+	color: black;
+}
+
+.span1 {
+	align-items: center;
+}
+
+.avatars {
+  float: left;
+  border-radius: 50%;
+  border-style: groove;
+  border-color: black;
+}
+
+#userName {
+  padding-left: 20px;
+  color: white;
+}
+
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: transparent;
+	border-color: white;
+	margin-bottom: 5px;
+}
+.btn-primary:hover {
+	color: blue;
+	background-color: white;
+	border-color: white;
+}
+
+.jumbotron {
+	background: black;
+	color: white;
+  text-align: center;
+}
+
+.jumbotron p {
+	color: white;
+	font-size: 26px;
+}
+
+.action, .comedy, .romance, .drama {
+ margin-left:50px;
+ margin-right:50px;
+ margin-bottom: 80px;
+ margin-top: 40px;
+ overflow: auto;
+ white-space: nowrap;
+}
+
+.action div, .comedy div, .romance div, .drama div {
+  width: 125px;
+  height: 210px;
+  display: inline-block;
+  padding: 20px;
+  visibility: visible;
+}

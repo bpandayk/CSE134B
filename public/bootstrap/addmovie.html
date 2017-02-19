@@ -8,7 +8,8 @@
 
       <!-- Optional theme -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+      <link rel="stylesheet" href="./css/BS_add.css">
+      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <style type="text/css">
                 .scrollmenu {
               background-color: #333;
@@ -29,9 +30,9 @@
     </style>
 
   </head>
-  
-  
-  
+
+
+
  <body>
 
  <header class="navbar navbar-inverse">
@@ -50,7 +51,7 @@
 
           <ul class="nav navbar-nav">
               <!-- <li class="active"><a href="#"> a<span class="sr-only">(current)</span></a></li> -->
-   
+
                  <li class="li1"><a href="viewmov.html">My Movies</a></li>
                  <li class="li1"><a href="addmovie.html">Add Movies</a></li>
                  <li class="li1"><form class="navbar-form navbar-left" role="search">
@@ -74,54 +75,80 @@
  </header>
 
     <!-- start div container after header -->
-     <div class="container"> 
+    <div class="jumbotron">
+     <div class="container">
+       <h1 class="head">Add New Movie</h1>
+        <p>Please input movie information and image below!</p>
+     </div>
+    </div>
+    <div class="container">
+      <div class="row">
+       <div class="col-md-6">
+          <table class="column add tab" border = "2" cellspacing="5" padding="5px">
+            <tr>
+            <th> Movie Description </th>
+            </tr>
+            <tr><td>
+              <br>
+              &nbsp&nbsp Movie name   : &nbsp <input type = "text" name="movname" value="Movie name" />
+              <br><br>
+              &nbsp&nbsp Genre        : &nbsp <select name="dropdown">
+                <option value="Action" selected>Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Family">Family & Kids</option>
+                <option value="Horror">Horror & Scifi</option>
+                <option value="Documentries">Documentries</option>
+                </select>
+              <br><br>
+              &nbsp&nbsp Ratings      : &nbsp 1 <input type = "radio" name="rate" value="1"/>
+              &nbsp 2 <input type = "radio" name="rate" value="2"/>
+              &nbsp 3 <input type = "radio" name="rate" value="3"/>
+              &nbsp 4 <input type = "radio" name="rate" value="4"/>
+              &nbsp 5 <input type = "radio" name="rate" value="5"/>
+              <br><br>
+              &nbsp&nbsp Enjoyed?      : &nbsp Yes <input type = "radio" name="enj" value="yes"/>
+              &nbsp No <input type = "radio" name="enj" value="no"/>
+              <br><br>
+              &nbsp&nbsp Recommended By: &nbsp <select name="dropdown">
+                <option value="Friends" selected>Friends</option>
+                <option value="Family">Family</option>
+                <option value="Family">Email</option>
+                <option value="Family">Advertisement</option>
+                <option value="Family">Internet</option>
+                </select>
+              <br><br>
+              &nbsp&nbsp Watched Date  : &nbsp <input type = "date" name="date" value="mm/dd/yyyy"/>
+              <br><br>
+              &nbsp&nbsp Description : </br>
+              <br>
+               <textarea rows="5" cols="50" name="description">
+               Enter description here...
+               </textarea>
+              <br><br>
 
-        <!-- <div class = "centered"> -->
+            </td></tr>
+          </table>
+       </div>
+        <div class="col-md-6">
+          <table class="column add tab" border = "2" cellspacing="5" padding="5px">
+            <tr>
+            <th> Movie Image </th>
+            </tr>
+            <tr><td>
+              <br>
+              &nbsp&nbsp Upload Image: <br>
+              <br><br><br><br><br>
 
-        <form class = "form-group" action="/action_page.php">
-          <label for="mname">Movie Name</label><br>
-          <input type="text" id="mname" name="moviename" placeholder="Latest movie you watched ..."><br>
-          <label for="date1">When did you watch this movie?</label><br>
-          <input type="date" name="wday" ><br>
-
-          <label for="genre">Genre</label><br>
-          <select id="Genre" name="Genre">
-            <option value="Action" selected>Action</option>
-            <option value="Comedy">Comedy</option>
-            <option value="Drama">Drama</option>
-            <option value="Family">Family & Kids</option>
-            <option value="Horror">Horror & Scifi</option>
-            <option value="Documentries">Documentries</option>
-          </select><br>
-
-          <label for="rate">Rating</label><br>
-          <select id="rrate" name="Rate">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select><br>
-
-          <label for="enjoy">Did you Enjoy the movie?</label> <br>
-          <select id="enjoy" name="enjoy">
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-          </select><br><br><br>
-
-
-        
-          <input type="submit" value="Submit">
-        </form>
-
-        <footer >
-             &copy MovieDex Team
-        </footer>
-
-      <!-- </div> -->
-
-     </div>  <!-- close div container after header -->
-
+              &nbsp&nbsp <input type="file" name="fileupload" accept="image/*" />
+              <br><br>
+              &nbsp&nbsp <span class="span1"><input type ="submit" name="add" value="   Add Movie   " ></span>
+              <br><br>
+            </td></tr>
+          </table>
+        </div>
+     </div>
+    </div>
 
 
 </body>
