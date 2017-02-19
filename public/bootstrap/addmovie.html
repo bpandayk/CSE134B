@@ -73,14 +73,56 @@
     </div>
  </header>
 
-<!-- start div container after header -->
- <div class="container"> 
+    <!-- start div container after header -->
+     <div class="container"> 
 
- </div>  <!-- close div container after header -->
+        <!-- <div class = "centered"> -->
+
+        <form class = "form-group" action="/action_page.php">
+          <label for="mname">Movie Name</label><br>
+          <input type="text" id="mname" name="moviename" placeholder="Latest movie you watched ..."><br>
+          <label for="date1">When did you watch this movie?</label><br>
+          <input type="date" name="wday" ><br>
+
+          <label for="genre">Genre</label><br>
+          <select id="Genre" name="Genre">
+            <option value="Action" selected>Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Family">Family & Kids</option>
+            <option value="Horror">Horror & Scifi</option>
+            <option value="Documentries">Documentries</option>
+          </select><br>
+
+          <label for="rate">Rating</label><br>
+          <select id="rrate" name="Rate">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select><br>
+
+          <label for="enjoy">Did you Enjoy the movie?</label> <br>
+          <select id="enjoy" name="enjoy">
+            <option value="yes" selected>Yes</option>
+            <option value="no">No</option>
+          </select><br><br><br>
 
 
-  <footer >
-     &copy MovieDex Team
-  </footer>
+        
+          <input type="submit" value="Submit">
+        </form>
+
+        <footer >
+             &copy MovieDex Team
+        </footer>
+
+      <!-- </div> -->
+
+     </div>  <!-- close div container after header -->
+
+
+
 </body>
 </html>
