@@ -1,9 +1,10 @@
+
+
 .sub-container {
-  position:relative;
-  left: 30%;
-  right: 30%;
-  top:60px;
-  width:40%;
+  width: 50%;
+  position:absolute;
+  margin: 90px 0 0 -25%;
+  left: 50%;
 }
 
 .act {
