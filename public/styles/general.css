@@ -12,6 +12,28 @@ body {
 }
 
 
+.nav11 {
+  position: fixed; 
+  width:100%;
+  height:60px;
+  background-color: #09233d;
+  font-family:Copperplate,Copperplate Gothic Light,fantasy;
+  font-size: 20px; 
+}
+
+.titlelogin {
+  position:relative;
+  top:20px;
+  height:80px;
+  font-family: "titleFont";
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  padding-left :37%;
+  padding-right : 15px;
+
+}
+
 
 .nav {
   position: fixed; 
@@ -95,4 +117,6 @@ li a {
 .li2:hover .drop-down {
     display: block;
 }
+
+
 
