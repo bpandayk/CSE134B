@@ -1,10 +1,9 @@
-
 .sub-container {
+  position:relative;
+  left: 30%;
+  right: 30%;
   top:60px;
-  margin-left:500px;
-  width:900px;
-  
-
+  width:40%;
 }
 
 .act {
@@ -26,7 +25,6 @@
 
 
 }
-
 
 .action  div {
   width: 125px;

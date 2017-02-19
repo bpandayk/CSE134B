@@ -5,29 +5,31 @@
 }
 
 body {
+  margin:0;
+  padding:0;
   background: black url("images/bodybg1.jpg") no-repeat fixed top;
-  background-size: 900px;
-
-
+  background-size: 45%;
 }
 
+
+
 .nav {
+  position: fixed; 
   top:0%;
   width:100%;
   background-color: #09233d;
   font-family:Copperplate,Copperplate Gothic Light,fantasy;
   font-size: 20px; 
-  position: fixed; 
-  width: 100%
 }
 
 .title {
+  position:relative;
   font-family: "titleFont";
   font-size: 40px;
   font-weight: bold;
   color: white;
-  padding-left :500px;
-  padding-right : 50px;
+  padding-left :20%;
+  padding-right : 15px;
 
 }
 
@@ -43,7 +45,7 @@ body {
 ul {
   list-style-type:none;
   margin:0;
-  padding:0;
+  padding-left:25%;
   overflow:hidden;
 }
 
@@ -92,13 +94,5 @@ li a {
 
 .li2:hover .drop-down {
     display: block;
-}
-
-
-.sub-container {
-  top:52px;
-  margin-left:500px;
-  width:900px;
-
 }
 
