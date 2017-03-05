@@ -5,7 +5,8 @@
     <title>Add Movie</title>
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/addmovie.css">
-
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="js/addmovies.js"></script>
 
   </head>
    <body>
@@ -44,16 +45,17 @@
      
    <div class="col2">
      <div>
-      <form action="newadd.html">
-      <label for="mname">Movie Name</label>
+      <form>
+      <label for="mname" id="l1">Movie Name</label>
       <input type="text" id="mname" name="moviename" placeholder="Latest movie you watched ...">
 
-      <label for="date1">When did you watch this movie?</label>
+      <label for="date1" id="l2">When did you watch this movie?</label>
       <input type="date" name="wday" id="movdate">
 
-      <label for="genre">Genre</label>
+      <label for="genre" id="l3">Genre</label>
       <select id="Genre" name="Genre">
-		<option value="Action" selected>Action</option>
+    <option value="None" selected></option>
+		<option value="Action">Action</option>
 		<option value="Comedy">Comedy</option>
 		<option value="Drama">Drama</option>
 		<option value="Family">Family & Kids</option>
@@ -61,27 +63,29 @@
 		<option value="Documentries">Documentries</option>
     </select>
 
-      <label for="rate">Rating</label>
+      <label for="rate" id="l4">Rating</label>
       <select id="rrate" name="Rate">
-		<option value="1" selected>1</option>
+    <option value="0" selected></option>
+		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5</option>
     </select>
 
-    <label for="enjoy">Did you Enjoy the movie?</label>
+    <label for="enjoy" id="l5">Did you Enjoy the movie?</label>
       <select id="enjoy" name="enjoy">
-		<option value="yes" selected>Yes</option>
+    <option value="none"></option>
+		<option value="yes">Yes</option>
 		<option value="no">No</option>
     </select>
 
-    <label for="desc">Movie Description</label>
+    <label for="desc" id="l6">Movie Description</label>
     <textarea rows="8"  id="desc1"> </textarea>
 
 
   
-    <input type="submit" value="Submit">
+    <input type="button" value="Submit" onclick="validateForm()">
    </form>
    </div>
 
