@@ -1,5 +1,6 @@
 var emailLogin, passLogin, signInButton, googSignInBtn;
 var userReg, passReg1, passReg2, emailReg, signUpBtn;
+var user;
 
 window.onload = function() {
 
@@ -37,7 +38,11 @@ function signIn() {
   console.log(email);
 
   if (!email || !pass) {
+    document.getElementById('signInFailMsg').style.visibility = "visible";
     return console.log('Email and password required for login.');
+  }
+  else {
+    document.getElementById('signInFailMsg').style.visibility = "hidden";
   }
 
   firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
@@ -45,6 +50,7 @@ function signIn() {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log('Sign-In Error', error);
+    document.getElementById('signInFailMsg').style.visibility = "visible";
   });
 }
 
@@ -52,17 +58,28 @@ function signUp() {
   const regEmail = emailReg.value;
   const regPass = passReg1.value;
   const regPassCheck = passReg2.value;
-  const regUsername = userReg.value;
+  const regName = userReg.value;
 
   if (regPass != regPassCheck) {
     return console.log('Passwords do not match.');
   }
 
-  firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).catch(function(error) {
+  firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(result) {
+    // The signed-in user info.
+    user = result.user;
+    document.getElementById('signUpFailMsg').style.visibility = "hidden";
+    user.updateProfile({ displayName: regName }).then(function() {
+      // Update successful.
+    }, function(error) {
+      // An error happened.
+      console.log('Error updating display name.', error);
+    });
+  }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log('Sign-Up Error', error);
+    document.getElementById('signUpFailMsg').style.visibility = "visible";
+    return console.log('Sign-Up Error', error);
     // ...
   });
 }
@@ -72,8 +89,22 @@ function signInGoog() {
   provider.addScope('profile');
   provider.addScope('email');
 
-  return firebase.auth().signInWithPopup(provider).catch(function(error) {
-    console.log('Error signing in with Google.', error);
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  user = result.user;
+  // ...
+  }).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  console.log("Error signing in with Google.", error);
+  document.getElementById('signInFailMsg').style.visibility = "visible";
   });
 
 }
