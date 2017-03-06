@@ -4,20 +4,18 @@
   <meta charset="UTF-8">
   <title>MovieDex-Login</title>
 
-    <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/general.css">
-  
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/general.css">
+
+  <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+  <!--script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"-->
 </head>
-
 <body class="bgimage">
-
-<header>
-<nav class="nav11">
-<span class = "titlelogin"> WELCOME TO MOVIEDEX </span>   
-</nav>
- </header>
-
-
+  <header>
+    <nav class="nav11">
+      <span class = "titlelogin"> WELCOME TO MOVIEDEX </span>
+    </nav>
+  </header>
 
   <div class="signin-wrap">
   <div class="signin-html">
@@ -28,15 +26,16 @@
 
     <div class="signin-form">
       <div class="sign-in-htm">
-      <form action="viewmov.html" method="get">
+      <!--form action="viewmov.html" method="get"-->
+      <form action="#" method="post">
         <div class="combine-all">
-          <label for="user" class="label">Username</label>
-          <input id="user" type="text" class="input">
+          <label for="userEmail" class="label">Email</label>
+          <input id="userEmail" type="text" class="input">
         </div>
 
         <div class="combine-all">
-          <label for="pass" class="label">Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
+          <label for="passEmail" class="label">Password</label>
+          <input id="passEmail" type="password" class="input" data-type="password">
         </div>
 
         <div class="combine-all">
@@ -46,51 +45,52 @@
         </div>
 
         <div class="combine-all">
-          <input type="submit" class="button" value="Sign In">
+          <input id="signInBtn" type="submit" class="button" value="Sign In" onclick="signIn()">
+          <input id="signInGoogBtn" type="submit" class="button" value="Sign In With Google" onclick="signInGoog ()">
         </div>
 
         <div class="hr"></div>
         <div class="footer1 onHoverChange">
           <a href="#forgot">Forgot Password?</a>
         </div>
-        </form>
+      </form>
       </div>
       <div class="sign-up-htm">
-      <form action="newmov.html" method="get">
+      <!-- form action="newmov.html" method="get" -->
+      <form action="#" method="post">
         <div class="combine-all">
           <label for="user" class="label">Username</label>
           <input id="user" type="text" class="input">
         </div>
 
         <div class="combine-all">
-          <label for="pass" class="label">Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
+          <label for="pass1" class="label">Password</label>
+          <input id="pass1" type="password" class="input" data-type="password">
         </div>
 
         <div class="combine-all">
-          <label for="pass" class="label">Repeat Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
+          <label for="pass2" class="label">Repeat Password</label>
+          <input id="pass2" type="password" class="input" data-type="password">
         </div>
 
         <div class="combine-all">
-          <label for="pass" class="label">Email Address</label>
-          <input id="pass" type="text" class="input">
+          <label for="emailReg" class="label">Email Address</label>
+          <input id="emailReg" type="text" class="input">
         </div>
 
         <div class="combine-all">
-          <input type="submit" class="button" value="Sign Up">
+          <input id="signUpBtn" type="submit" class="button" value="Sign Up" onclick="signUp()">
         </div>
 
         <div class="hr"></div>
         <div class="footer1 onHoverChange">
           <label for="tab-1">Already Member?</a>
         </div>
-        </form>
+      </form>
       </div>
     </div>
   </div>
-</div>
-  
-  
+  </div>
+  <script src="./js/index.js"></script>
 </body>
 </html>
