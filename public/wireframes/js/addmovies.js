@@ -13,52 +13,37 @@ var addMovie=false;
 var search=false;
 
 var myMovie = '<div class = "titles"><h3 class="act"><span class = "genre"> Action </span></h3>'+
-'<div class = "action">'+
+'<div class = "action" id="Act">'+
   
   '<div> <a href="./viewdetail.html"> <img src="images/1.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/2.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/3.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/4.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/5.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/6.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/7.jpg"></a></div>'+
+  
 '</div><div class = "titles">'+
 '<h3><span class = "genre"> Comedy </span></h3></div>'+
-'<div class = "comedy">'+  
+'<div class = "comedy" id="Com">'+  
   '<div> <a href="./viewdetail.html"> <img src="images/8.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/9.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/3.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/11.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/12.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/13.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/14.jpg"></a></div>'+
+  
 '</div><div class = "titles">'+
 '<h3><span class = "genre"> Drama </span></h3></div>'+
-'<div class = "drama">'+
+'<div class = "drama" id="Dma">'+
  ' <div> <a href="./viewdetail.html"> <img src="images/15.jpg"></a></div>'+
 '</div><div class = "titles">'+
 '<h3><span class = "genre"> Family and Kids </span></h3></div>'+
-'<div class = "family-kids">'+
+'<div class = "family-kids" id="F&K">'+
 
   '<div> <a href="./viewdetail.html"> <img src="images/11.jpg"></a></div>'+
   '<div> <a href="./viewdetail.html"> <img src="images/21.jpg"></a></div>'+
 
 '</div> <div class = "titles">'+
  '<h3><span class = "genre"> Horror and Scifi </span></h3></div>'+
-'<div class = "horror-scifi">'+
+'<div class = "horror-scifi" id="H&S">'+
  ' <div> <a href="./viewdetail.html"> <img src="images/19.jpg"></a></div>'+
 
-'</div> <div class = "titles">'+
+'</div> <div class = "titles" >'+
 '<h3><span class = "genre"> Documentries </span></h3></div>'+
-'<div class = "documentries">'+
+'<div class = "documentries"  id="Doc">'+
   
    '<div> <a href="./viewdetail.html"> <img src="images/13.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/5.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/6.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/9.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/15.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/17.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/8.jpg"></a></div>'+
+  
 '</div> </div>';
 
 
@@ -142,10 +127,12 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
   var storage=firebase.storage();
 
 
+
   var user = localStorage.getItem("firebase:authUser:AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY:[DEFAULT]");
   var parser = JSON.parse(user);
+  var UID = parser.uid;
   
-  console.log(parser.uid);
+
   
 function mybodyLoad() {
   var status = localStorage.getItem("current");
@@ -153,7 +140,7 @@ function mybodyLoad() {
      addMovieDom();
   }
   
-    if (status == "myMovie"){
+    if (status == "myMovie" || !status){
      myMovieDom();
   }
 }
@@ -176,13 +163,13 @@ function addMovieDom() {
       localStorage.setItem("current", "addMovie");
 
     }
-
 }
 
 
 
 function myMovieDom() {
-	
+	var ret = getData("Family&kids", "F&K");
+	//console.log(ret);
     document.getElementById("sub-contain").innerHTML=myMovie;
     if (typeof(Storage) !== "undefined"){
       localStorage.setItem("current", "myMovie");
@@ -257,12 +244,37 @@ function validateForm(){
 
 
 
+
+function getData(genre, id) {
+	var path = '/users/'+UID+'/'+genre;
+	var ret;
+	//var i;
+	
+	return firebase.database().ref(path).once('value').then(function(snapshot){
+		ret = snapshot.val();
+		var strin=" ";
+		
+		var key = Object.keys(ret);
+		for (var i in key){
+		  
+		  var temp =  '<div> <img src="#">'+ ret[key[i]].m_name +' </div>';
+		  strin = strin + temp;
+		  
+		}
+		console.log(strin);
+		 document.getElementById(id).innerHTML = strin;
+		
+	
+	});	
+}
+
+
 //this function connects to firebase database, creats the json object of data
 //and creates a new movie profile.
 function submitData(){
 	var ret = validateForm();
 
-	var UID = parser.uid;
+
 
 	if(ret){
 		var path;
