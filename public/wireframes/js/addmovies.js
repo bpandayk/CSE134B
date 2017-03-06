@@ -139,6 +139,7 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
   firebase.initializeApp(config);
 
   var database=firebase.database();
+  var storage=firebase.storage();
 
 
   
