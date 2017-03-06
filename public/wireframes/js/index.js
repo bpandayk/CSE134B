@@ -1,17 +1,20 @@
-document.onload = function() {
+var emailLogin, passLogin, signInButton, googSignInBtn;
+var userReg, passReg1, passReg2, emailReg, signUpBtn;
+
+window.onload = function() {
 
   //Elements for email sign-in
-  const emailLogin = document.getElementById('userEmail');
-  const passLogin = document.getElementById('passEmail');
-  const signInButton = document.getElementById('signInBtn');
-  const googSignInBtn = document.getElementbyId('signInGoogBtn');
+  emailLogin = document.getElementById('userEmail');
+  passLogin = document.getElementById('passEmail');
+  signInButton = document.getElementById('signInBtn');
+  googSignInBtn = document.getElementById('signInGoogBtn');
 
   //Elements for registering new account
-  const userReg = document.getElementById('user');
-  const passReg1 = document.getElementById('pass1');
-  const passReg2 = document.getElementById('pass2');
-  const emailReg = document.getElementById('emailReg');
-  const signUpBtn = document.getElementById('signUpBtn');
+  userReg = document.getElementById('user');
+  passReg1 = document.getElementById('pass1');
+  passReg2 = document.getElementById('pass2');
+  emailReg = document.getElementById('emailReg');
+  signUpBtn = document.getElementById('signUpBtn');
 
   if (signInButton) {
     signInButton.addEventListener('click', signIn);
@@ -21,13 +24,17 @@ document.onload = function() {
     signUpBtn.addEventListener('click', signUp);
   }
 
-}
+  if (googSignInBtn) {
+    googSignInBtn.addEventListener('click', signInGoog);
+  }
+
+};
 
 function signIn() {
   const email = emailLogin.value;
   const pass = passLogin.value;
 
-  console.log('WTFFFFFFFF');
+  console.log(email);
 
   if (!email || !pass) {
     return console.log('Email and password required for login.');
