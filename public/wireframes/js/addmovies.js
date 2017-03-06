@@ -91,8 +91,8 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
 		'<option value="Action">Action</option>'+
 		'<option value="Comedy">Comedy</option>'+
 		'<option value="Drama">Drama</option>'+
-		'<option value="Family">Family & Kids</option>'+
-		'<option value="Horror">Horror & Scifi</option>'+
+		'<option value="Family&Kids">Family & Kids</option>'+
+		'<option value="Horror&Scifi">Horror & Scifi</option>'+
 		'<option value="Documentries">Documentries</option>'+
     '</select>'+
 
@@ -142,6 +142,10 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
   var storage=firebase.storage();
 
 
+  var user = localStorage.getItem("firebase:authUser:AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY:[DEFAULT]");
+  var parser = JSON.parse(user);
+  
+  console.log(parser.uid);
   
 function mybodyLoad() {
   var status = localStorage.getItem("current");
@@ -251,45 +255,48 @@ function validateForm(){
 
 }
 
+
+
 //this function connects to firebase database, creats the json object of data
 //and creates a new movie profile.
 function submitData(){
 	var ret = validateForm();
-	console.log(ret);
-	var UID = 'sXdcXGsrg8dBBBf3d1RdcKS3T412';
+
+	var UID = parser.uid;
 
 	if(ret){
 		var path;
 		if(genre == "Action"){
-		  path = "/users/Bibek/Action";
+		  path = 'users/'+UID+'/Action';
 		}
 		
 		///users/sXdcXGsrg8dBBBf3d1RdcKS3T412/Action
 		
-				if(genre == "Comedy"){
-		  path = "users/"+UID+"/Comedy";
+		if(genre == "Comedy"){
+		  path = 'users/'+UID+'/Comedy';
 		}
 
 
 		if(genre == "Drama"){
-		  path = "users/"+UID+"/Drama";
+		  path = 'users/'+UID+'/Drama';
 		}
 
 
-		if(genre == "Family & Kids"){
-		  path = "users/"+UID+"/Family&kids";
+		if(genre == "Family&Kids"){
+		  path = 'users/'+UID+'/Family&kids';
 		}
 
-		if(genre == "Horror & Scifi"){
-		  path = "users/"+UID+"/Horror&scifi";
+		if(genre == "Horror&Scifi"){
+		  path = 'users/'+UID+'/Horror&scifi';
 		}
 		
 				if(genre == "Documentries"){
-		  path = "users/"+UID+"/Documentries";
+		  path = 'users/'+UID+'/Documentries';
 		}
        
-         
-         firebase.database().ref('users/'+UID+'/Action/'+moviename).set({
+         var fullUrl= path + '/' + moviename;
+         	console.log(fullUrl);
+         firebase.database().ref(fullUrl).set({
          	m_name: moviename,
          	m_date: date,
          	m_genre: genre,
@@ -301,4 +308,5 @@ function submitData(){
          console.log("success");
 	}
 }
+
 

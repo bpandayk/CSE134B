@@ -45,7 +45,6 @@ function signIn() {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log('Sign-In Error', error);
-    // ...
   });
 }
 
@@ -73,7 +72,7 @@ function signInGoog() {
   provider.addScope('profile');
   provider.addScope('email');
 
-  return firebase.auth().signInWithPopop(provider).catch(function(error) {
+  return firebase.auth().signInWithPopup(provider).catch(function(error) {
     console.log('Error signing in with Google.', error);
   });
 
@@ -92,6 +91,7 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
     console.log('User', firebaseUser);
+    window.location.href="addmovie.html";
   }
   else {
     console.log('User not logged in.');
