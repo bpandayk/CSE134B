@@ -14,35 +14,27 @@ var search=false;
 
 var myMovie = '<div class = "titles"><h3 class="act"><span class = "genre"> Action </span></h3>'+
 '<div class = "action" id="Act">'+
-  
-  '<div> <a href="./viewdetail.html"> <img src="images/1.jpg"></a></div>'+
-  
+    
 '</div><div class = "titles">'+
 '<h3><span class = "genre"> Comedy </span></h3></div>'+
 '<div class = "comedy" id="Com">'+  
-  '<div> <a href="./viewdetail.html"> <img src="images/8.jpg"></a></div>'+
   
 '</div><div class = "titles">'+
 '<h3><span class = "genre"> Drama </span></h3></div>'+
 '<div class = "drama" id="Dma">'+
- ' <div> <a href="./viewdetail.html"> <img src="images/15.jpg"></a></div>'+
+
 '</div><div class = "titles">'+
 '<h3><span class = "genre"> Family and Kids </span></h3></div>'+
 '<div class = "family-kids" id="F&K">'+
 
-  '<div> <a href="./viewdetail.html"> <img src="images/11.jpg"></a></div>'+
-  '<div> <a href="./viewdetail.html"> <img src="images/21.jpg"></a></div>'+
-
 '</div> <div class = "titles">'+
  '<h3><span class = "genre"> Horror and Scifi </span></h3></div>'+
 '<div class = "horror-scifi" id="H&S">'+
- ' <div> <a href="./viewdetail.html"> <img src="images/19.jpg"></a></div>'+
+
 
 '</div> <div class = "titles" >'+
 '<h3><span class = "genre"> Documentries </span></h3></div>'+
 '<div class = "documentries"  id="Doc">'+
-  
-   '<div> <a href="./viewdetail.html"> <img src="images/13.jpg"></a></div>'+
   
 '</div> </div>';
 
@@ -168,8 +160,13 @@ function addMovieDom() {
 
 
 function myMovieDom() {
-	var ret = getData("Family&kids", "F&K");
-	//console.log(ret);
+	getData("Action", "Act");
+	getData("Comedy", "Com");
+	getData("Family&kids", "F&K");
+	getData("Drama", "Dma");
+	getData("Horror&scifi", "H&S");
+	getData("Documentries", "Doc");
+	
     document.getElementById("sub-contain").innerHTML=myMovie;
     if (typeof(Storage) !== "undefined"){
       localStorage.setItem("current", "myMovie");
@@ -263,10 +260,10 @@ function getData(genre, id) {
 		}
 		console.log(strin);
 		 document.getElementById(id).innerHTML = strin;
-		
-	
 	});	
 }
+
+
 
 
 //this function connects to firebase database, creats the json object of data
