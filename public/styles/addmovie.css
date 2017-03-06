@@ -55,7 +55,7 @@ border-width: 2px;
 }
 
 
-input[type=text], input[type=date], select {
+input[type=text], input[type=date], input[type=file], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -76,7 +76,12 @@ input[type=text], input[type=date], select {
 
 }
 
-input[type=button] {
+
+.addsub{
+    padding-top:10px;
+
+}
+.addsub > input[type=button] {
     width: 100%;
     background-color: #09233d;
     color: white;
@@ -86,8 +91,10 @@ input[type=button] {
     border-radius: 4px;
     cursor: pointer;
     font-size:20px;
+
 }
 
 input[type=submit]:hover {
-    background-color: #147ea8;
+    padding-top:10px;
+    
 }

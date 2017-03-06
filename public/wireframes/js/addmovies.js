@@ -11,6 +11,7 @@ var description;
 var myMovie=false;
 var addMovie=false;
 var search=false;
+var uploader;
 
 var myMovie = '<div class = "titles"><h3 class="act"><span class = "genre"> Action </span></h3>'+
 '<div class = "action" id="Act">'+
@@ -40,6 +41,8 @@ var myMovie = '<div class = "titles"><h3 class="act"><span class = "genre"> Acti
 
 
 var searchMovie;
+
+
 
 
 var addMovieD = ' <div class="second-level" id="secondlvl">' +
@@ -93,9 +96,10 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
     '<label for="desc" id="l6">Movie Description</label>'+
     '<textarea rows="8"  id="desc1"> </textarea>'+
 
-
-  
-    '<input type="button" value="Submit" onclick="submitData()">'+
+    '<label for="movimg" id="l7">Movie Image </br></label>'+
+    '<input type="file" id="movimg" name="movimage" accept=".jpg,.jpeg,.png">'+
+    '<div class="addsub">'+
+    '<input type="button" value="Submit" onclick="submitData()"></div>'+
    '</form>'+
    '</div>'+
 
@@ -123,7 +127,8 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
   var user = localStorage.getItem("firebase:authUser:AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY:[DEFAULT]");
   var parser = JSON.parse(user);
   var UID = parser.uid;
-  
+
+
 
   
 function mybodyLoad() {
@@ -135,7 +140,15 @@ function mybodyLoad() {
     if (status == "myMovie" || !status){
      myMovieDom();
   }
+  
+  if(status == "viewdetail") {
+     var det = localStorage.getItem("detail");
+     showDetail(det);
+     
+  }
 }
+
+
 
 
 function getFormValues(){
@@ -145,7 +158,12 @@ function getFormValues(){
 	rating=document.getElementById("rrate").value;
 	enjoyed=document.getElementById("enjoy").value;
 	description=document.getElementById("desc1").value;
+      uploader=document.getElementById("movimg").files;
+
 }
+
+
+
 
 
 function addMovieDom() {
@@ -159,7 +177,9 @@ function addMovieDom() {
 
 
 
+
 function myMovieDom() {
+    document.getElementById("sub-contain").innerHTML=myMovie;
 	getData("Action", "Act");
 	getData("Comedy", "Com");
 	getData("Family&kids", "F&K");
@@ -167,13 +187,16 @@ function myMovieDom() {
 	getData("Horror&scifi", "H&S");
 	getData("Documentries", "Doc");
 	
-    document.getElementById("sub-contain").innerHTML=myMovie;
+
     if (typeof(Storage) !== "undefined"){
       localStorage.setItem("current", "myMovie");
 
     }
 
 }
+
+
+
 
 function validateForm(){
 	var ret = true;
@@ -222,7 +245,7 @@ function validateForm(){
 		ret=false;
 	} else {
 		document.getElementById("l5").style.color="white";
-
+		
 	}
 
 	if(!description) {
@@ -233,10 +256,7 @@ function validateForm(){
 
 	}
 
- 
 	return ret;
-
-
 }
 
 
@@ -250,18 +270,141 @@ function getData(genre, id) {
 	return firebase.database().ref(path).once('value').then(function(snapshot){
 		ret = snapshot.val();
 		var strin=" ";
+		var mdet,mname, mgenre,mrate, menjoy,mdate,mdesc,murl;
 		
+		if(ret) {
 		var key = Object.keys(ret);
+		
+		
 		for (var i in key){
+		  mdet = key[i];
+		  mname=ret[key[i]].m_name; 
+		  mdate=ret[key[i]].m_date; 
+		  mrate=ret[key[i]].m_rating; 
+		  menjoy=ret[key[i]].m_enjoy; 
+		  mgenre=ret[key[i]].m_genre; 
+		  mdesc=ret[key[i]].m_desc; 
+		  murl=ret[key[i]].m_url; 
 		  
-		  var temp =  '<div> <img src="#">'+ ret[key[i]].m_name +' </div>';
+
+		  var temp =  '<div> <img src=' + murl +
+		  ' onclick='+'"showDetail(\''+ mdet +'%'+genre+'\')"> </div>';
+		  
+		  /*var temp =  '<div> <img src=' + murl +
+		  ' onclick='+'"showDetail(\''+ mname + '%'+ mdate+ '%'+ mgenre+
+		  '%'+ mrate+'%'+ mdesc+'%'+ murl+'\')"> </div>';*/
+		  
 		  strin = strin + temp;
 		  
+		 }
 		}
-		console.log(strin);
+
 		 document.getElementById(id).innerHTML = strin;
+		 
+
 	});	
 }
+
+
+
+
+function showDetail(mdetail){
+var name,date,enjoy,rate,url,desc;
+
+var detArray = mdetail.split("%");
+var path = '/users/'+UID+'/'+detArray[1]+'/'+ detArray[0];
+
+
+	return firebase.database().ref(path).once('value').then(function(snapshot){
+    	    console.log(snapshot.val());
+		ret = snapshot.val();
+		var strin=" ";
+		var mname, mgenre,mrate, menjoy,mdate,mdesc,murl;
+		
+		if(ret) {  
+
+		  mname=ret.m_name; 
+		  mdate=ret.m_date; 
+		  mrate=ret.m_rating; 
+		  menjoy=ret.m_enjoy; 
+		  mgenre=ret.m_genre; 
+		  mdesc=ret.m_desc; 
+		  murl=ret.m_url; 
+		}
+		
+	  var viewdetail = ' <div class = "movdetail" >'+
+  '<div><h2>'+mname+'</h2></div>'+
+   '<div class="second-level">'+
+     '<div class="col1">'+
+     '<img src='+murl+'>'+
+     '<div class="rating">'+
+       '<span id="star0">☆</span><span id="star1">☆</span><span id="star2">☆</span><span id="star3">☆</span><span id="star4">☆</span>'+
+     '</div>'+
+     '</div>'+
+     
+   '<div class="col2">'+
+    ' <div class="name"> <span> '+mname+' </span></div>'+
+     '<div class= "desc"> <p id="desc123">'+ mdesc+' </p>  </div>'+
+     '<div class= "genre"> <span class"=gen1">'+ mgenre +'</span> <span class="gen2"> 115min </span> </div>'+
+     '<div class= "refer"> <span> Enjoyed:&nbsp&nbsp&nbsp&nbsp' +menjoy+'</span> </div>'+
+     '<div class= "date"> <span> Watched on:&nbsp&nbsp&nbsp&nbsp       '+ mdate +' </span> </div>'+
+
+   '</div>'+
+   '</div>'+
+   '<div class="addsub">'+
+    '<input type="button" id="update" value="Update" onclick="updateData(\''+ path +'\')"></div>'+
+    '<div class="addsub">'+
+    '<input type="button" id = "del" value="Delete" onclick="deleteData(\''+ path +'\')"></div>'+
+  '</div>';
+
+		 document.getElementById("sub-contain").innerHTML=viewdetail;
+	    if (typeof(Storage) !== "undefined"){
+      		localStorage.setItem("current", "viewdetail");
+      		localStorage.setItem("detail",mdetail);
+      	}
+		 
+		 if(mrate==1){
+		     document.getElementById("star0").style.color="gold";
+		     document.getElementById("star1").style.color="white";
+		     document.getElementById("star2").style.color="white";	
+		     document.getElementById("star3").style.color="white";
+		     document.getElementById("star4").style.color="white";   		     
+		 }
+		 
+		 if(mrate==2){
+		     document.getElementById("star0").style.color="gold";
+		     document.getElementById("star1").style.color="gold";
+		     document.getElementById("star2").style.color="white";	
+		     document.getElementById("star3").style.color="white";
+		     document.getElementById("star4").style.color="white";   		     
+		 }
+		 if(mrate==3){
+		     document.getElementById("star0").style.color="gold";
+		     document.getElementById("star1").style.color="gold";
+		     document.getElementById("star2").style.color="gold";	
+		     document.getElementById("star3").style.color="white";
+		     document.getElementById("star4").style.color="white";   		     
+		 }
+		 if(mrate==4){
+		     document.getElementById("star0").style.color="gold";
+		     document.getElementById("star1").style.color="gold";
+		     document.getElementById("star2").style.color="gold";	
+		     document.getElementById("star3").style.color="gold";
+		     document.getElementById("star4").style.color="white";   		     
+		 }
+		 if(mrate==5){
+		     document.getElementById("star0").style.color="gold";
+		     document.getElementById("star1").style.color="gold";
+		     document.getElementById("star2").style.color="gold";	
+		     document.getElementById("star3").style.color="gold";
+		     document.getElementById("star4").style.color="gold";   		     
+		 }
+	});
+	
+}
+
+
+
 
 
 
@@ -270,11 +413,67 @@ function getData(genre, id) {
 //and creates a new movie profile.
 function submitData(){
 	var ret = validateForm();
-
+	var imgname =  moviename.split(' ').join('');
+    var downloadURL;
 
 
 	if(ret){
-		var path;
+		//upload image
+		if (uploader){
+		    var storage = firebase.storage().ref('images/'+imgname);
+		    storage.put(uploader[0]).then(function(snapshot){
+		       console.log(snapshot.downloadURL);
+		       downloadURL=snapshot.downloadURL;
+		       
+		       
+		       
+		       
+		       if(genre == "Action"){
+		  path = 'users/'+UID+'/Action';
+		}
+		
+		///users/sXdcXGsrg8dBBBf3d1RdcKS3T412/Action
+		
+		if(genre == "Comedy"){
+		  path = 'users/'+UID+'/Comedy';
+		}
+
+
+		if(genre == "Drama"){
+		  path = 'users/'+UID+'/Drama';
+		}
+
+
+		if(genre == "Family&Kids"){
+		  path = 'users/'+UID+'/Family&kids';
+		}
+
+		if(genre == "Horror&Scifi"){
+		  path = 'users/'+UID+'/Horror&scifi';
+		}
+		
+				if(genre == "Documentries"){
+		  path = 'users/'+UID+'/Documentries';
+		}
+       
+         var fullUrl= path + '/' + imgname;
+         	console.log(fullUrl);
+         firebase.database().ref(fullUrl).set({
+         	m_name: moviename,
+         	m_date: date,
+         	m_genre: genre,
+         	m_rating: rating,
+         	m_enjoy:enjoyed,
+         	m_desc:description, 
+         	m_url:downloadURL       
+         });
+		});
+		
+		}
+
+		
+	
+		/*var path;
 		if(genre == "Action"){
 		  path = 'users/'+UID+'/Action';
 		}
@@ -303,7 +502,7 @@ function submitData(){
 		  path = 'users/'+UID+'/Documentries';
 		}
        
-         var fullUrl= path + '/' + moviename;
+         var fullUrl= path + '/' + imgname;
          	console.log(fullUrl);
          firebase.database().ref(fullUrl).set({
          	m_name: moviename,
@@ -312,7 +511,7 @@ function submitData(){
          	m_rating: rating,
          	m_enjoy:enjoyed,
          	m_desc:description        
-         });
+         });*/
          
          console.log("success");
 	}

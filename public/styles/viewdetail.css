@@ -1,10 +1,3 @@
-.sub-container {
-  position:relative;
-  left: 30%;
-  right: 30%;
-  top:60px;
-  width:40%;
-}
 
 
 .movdetail{
@@ -34,7 +27,7 @@
   float:left;
   position:relative;
   width:50%;
-  height:400px;
+
   margin-left:10%;
   color: white;
   font-family: Big Caslon;
@@ -86,3 +79,7 @@ color:white;
 
 }
 
+#del{
+background-color:red;
+margin-bottom:20px;
+}
