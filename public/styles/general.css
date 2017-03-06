@@ -99,19 +99,19 @@ li a {
   display: inline-block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+padding-top: 15px;
   text-decoration: none;
 } 
 
 
 
-.li1 a:hover {
+.li1 input[type=button]:hover {
   background-color:#147ea8;
 }
 
 .drop {
   font-family: "titleFont";
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
   color: white;
   
@@ -128,9 +128,9 @@ li a {
     z-index: 1;
 }
 
-.drop-down a {
+.drop-down input[type=button] {
     font-family:Copperplate,Copperplate Gothic Light,fantasy;
-    font-size:15px;
+    font-size:18px;
     font-weight:bold;
     color: white;
     padding: 12px 16px;
@@ -139,7 +139,7 @@ li a {
     text-align: left;
 }
 
-.drop-down a:hover {
+.drop-down input[type=button]:hover {
   background-color: #147ea8
 }
 
@@ -158,5 +158,6 @@ input[type=button] {
     border-radius: 4px;
     cursor: pointer;
     font-size:20px;
+    font-family:Copperplate,Copperplate Gothic Light,fantasy;
 }
 
