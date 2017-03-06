@@ -9,6 +9,13 @@
 
   <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
   <!--script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"-->
+  <style>
+  #signInFailMsg, #signUpFailMsg {
+    color: red;
+    font-weight: bold;
+    visibility: hidden;
+  }
+  </style>
 </head>
 <body class="bgimage">
   <header>
@@ -49,6 +56,10 @@
           <input id="signInGoogBtn" type="submit" class="button" value="Sign In With Google">
         </div>
 
+        <div class="combine-all">
+          <p id="signInFailMsg" style=""> Sign-In Failed: Please try again with a valid email and password. Or, create a new account.<p>
+        </div>
+
         <div class="hr"></div>
         <div class="footer1 onHoverChange">
           <a href="#forgot">Forgot Password?</a>
@@ -59,8 +70,13 @@
       <!-- form action="newmov.html" method="get" -->
       <form action="#" method="get">
         <div class="combine-all">
-          <label for="user" class="label">Username</label>
+          <label for="user" class="label">Name</label>
           <input id="user" type="text" class="input">
+        </div>
+
+        <div class="combine-all">
+          <label for="emailReg" class="label">Email Address</label>
+          <input id="emailReg" type="text" class="input">
         </div>
 
         <div class="combine-all">
@@ -74,12 +90,8 @@
         </div>
 
         <div class="combine-all">
-          <label for="emailReg" class="label">Email Address</label>
-          <input id="emailReg" type="text" class="input">
-        </div>
-
-        <div class="combine-all">
           <input id="signUpBtn" type="submit" class="button" value="Sign Up">
+          <p id="signUpFailMsg" style=""> Sign-Up Failed: Please make sure email has not been used and passwords match.<p>
         </div>
 
         <div class="hr"></div>
