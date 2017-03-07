@@ -69,7 +69,7 @@ function signUp() {
     user = result.user;
     document.getElementById('signUpFailMsg').style.visibility = "hidden";
     user.updateProfile({ displayName: regName }).then(function() {
-      // Update successful.
+        window.location.href="addmovie.html";      // Update successful.
     }, function(error) {
       // An error happened.
       console.log('Error updating display name.', error);
