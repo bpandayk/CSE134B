@@ -1,5 +1,5 @@
 var emailLogin, passLogin, signInButton, googSignInBtn;
-var userReg, passReg1, passReg2, emailReg, signUpBtn;
+var userReg, passReg1, passReg2, emailReg, signUpBtn, username;
 var user;
 
 window.onload = function() {
@@ -59,15 +59,16 @@ function signUp() {
   const regPass = passReg1.value;
   const regPassCheck = passReg2.value;
   const regName = userReg.value;
+  username = regName;
 
   if (regPass != regPassCheck) {
     return console.log('Passwords do not match.');
   }
-
-  firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(result) {
-    // The signed-in user info.
-    user = result.user;
     document.getElementById('signUpFailMsg').style.visibility = "hidden";
+  firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(snapshot) {
+    // The signed-in user info.
+    user = snapshot.user;
+
     user.updateProfile({ displayName: regName }).then(function() {
         window.location.href="MovieDex.html";      // Update successful.
     }, function(error) {

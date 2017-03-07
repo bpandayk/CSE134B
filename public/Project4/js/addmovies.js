@@ -591,13 +591,52 @@ function submitupdateData(detail){
 console.log(uploader);
 
      if(uploader.length != 0){
-     
+    	 var storage = firebase.storage().ref('images/'+detArray[0]);
+    	 storage.delete();
+		 storage.put(uploader[0]).then(function(snapshot){
+		 console.log(snapshot.downloadURL);
+		 downloadURL=snapshot.downloadURL;
+		 
+		 
+		 var updates = {};
+    	 if (date){
+
+    		updates[path+"m_date"]=date;
+        }
+    
+    	if(rating !== "0"){
+
+    		updates[path+"m_rating"]=rating;
+    	}
+    
+   		 if(enjoyed !== "None"){
+
+    		updates[path+"m_enjoy"]=enjoyed;
+    	}	   
+    
+    	if(description!==" "){
+
+    	updates[path+"m_desc"]=description;
+    	} 
+    	
+    	updates[path+"m_url"]=downloadURL;
+
+
+
+  		return firebase.database().ref().update(updates).then(function(snapshot){
+     	 console.log(snapshot);
+     	 showDetail(detail);
+ 		 }, function(error){
+   			  console.log(error);
+ 		 });
+		  
+	 });
      
      
      } else {
         
 
-  		var updates = {};
+  	var updates = {};
     if (date){
 
     	updates[path+"m_date"]=date;
