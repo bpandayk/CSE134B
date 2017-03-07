@@ -7,12 +7,12 @@ body{
 
 @font-face {
   font-family: titleFont;
-  src: url("fonts/york.ttf");
+  src: url("../fonts/york.ttf");
 }
 
 @font-face {
   font-family: font2;
-  src: url("fonts/as.ttf");
+  src: url("../fonts/as.ttf");
 }
 
 img {
