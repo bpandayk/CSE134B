@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/addmovie.css">
+    <link rel="stylesheet" href="../styles/viewdetail.css">
+    <link rel="stylesheet" href="../styles/viewmov.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/addmovies.js"></script>
+
+  </head>
+  
+  
+  <body onload="mybodyLoad()">
+
+<div class="header">
+<div class="nav">
+ <ul>
+   <li><span class = "title"> MOVIEDEX </span> </li>
+   <li class="li1"><input type="button" onclick="myMovieDom()" value="My Movies"></button></li>
+   <li class="li1"><input type="button" onclick="addMovieDom()" value="Add Movies"></button></li>
+   <li class="li1"><input type="button" onclick="searchDom()" value="Search"></button></li>
+   <li class="li3">&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+   <li class="li2"><a href="#" class="drpbtn"><span class="drop" id="dropmenu"> </span></a>
+     <div class = "drop-down">
+        <input type="button" onclick="accInfo()" value="Account Info"></button>
+        <input type="button" onclick="logout()" value="Logout"></button>
+     </div>
+  </li>
+ </ul>
+  </div>
+</div>
+
+
+
+<div class = "sub-container" id="sub-contain">
+   <div class="second-level" id="secondlvl">
+
+   
+   </div>
+ 
+  </div>
+
+
+
+
+</body>
+
+</html>
