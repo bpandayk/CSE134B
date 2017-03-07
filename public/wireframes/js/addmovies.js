@@ -125,8 +125,8 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
   var parser = JSON.parse(user);
   var UID = parser.uid;
   var username = parser.displayName;
-  username = username.toUpperCase();
-  console.log(username);
+  //username = username.toUpperCase();
+  console.log(parser);
 
   
 
@@ -255,6 +255,15 @@ function validateForm(){
 		document.getElementById("l6").style.color="white";
 
 	}
+	
+	
+	if(uploader.length == 0) {
+		document.getElementById("l7").style.color="red";
+		ret=false;
+	} else {
+		document.getElementById("l7").style.color="white";
+
+	}
 
 	return ret;
 }
@@ -290,10 +299,7 @@ function getData(genre, id) {
 		  var temp =  '<div> <img src=' + murl +
 		  ' onclick='+'"showDetail(\''+ mdet +'%'+genre+'\')"> </div>';
 		  
-		  /*var temp =  '<div> <img src=' + murl +
-		  ' onclick='+'"showDetail(\''+ mname + '%'+ mdate+ '%'+ mgenre+
-		  '%'+ mrate+'%'+ mdesc+'%'+ murl+'\')"> </div>';*/
-		  
+		  		  
 		  strin = strin + temp;
 		  
 		 }
@@ -342,7 +348,7 @@ var path = '/users/'+UID+'/'+detArray[1]+'/'+ detArray[0];
      '</div>'+
      '</div>'+
      
-   '<div class="col2">'+
+   '<div class="col2" id="updatedom">'+
     ' <div class="name"> <span> '+mname+' </span></div>'+
      '<div class= "desc"> <p id="desc123">'+ mdesc+' </p>  </div>'+
      '<div class= "genre"> <span class="gen1">'+ mgenre +'</span> <span class="gen2"> 115min </span> </div>'+
@@ -428,7 +434,7 @@ function submitData(){
 		       
 		       
 		       
-		       if(genre == "Action"){
+		if(genre == "Action"){
 		  path = 'users/'+UID+'/Action';
 		}
 		
@@ -474,48 +480,6 @@ function submitData(){
 		});
 		
 		}
-
-		
-	
-		/*var path;
-		if(genre == "Action"){
-		  path = 'users/'+UID+'/Action';
-		}
-		
-		///users/sXdcXGsrg8dBBBf3d1RdcKS3T412/Action
-		
-		if(genre == "Comedy"){
-		  path = 'users/'+UID+'/Comedy';
-		}
-
-
-		if(genre == "Drama"){
-		  path = 'users/'+UID+'/Drama';
-		}
-
-
-		if(genre == "Family&Kids"){
-		  path = 'users/'+UID+'/Family&kids';
-		}
-
-		if(genre == "Horror&Scifi"){
-		  path = 'users/'+UID+'/Horror&scifi';
-		}
-		
-				if(genre == "Documentries"){
-		  path = 'users/'+UID+'/Documentries';
-		}
-       
-         var fullUrl= path + '/' + imgname;
-         	console.log(fullUrl);
-         firebase.database().ref(fullUrl).set({
-         	m_name: moviename,
-         	m_date: date,
-         	m_genre: genre,
-         	m_rating: rating,
-         	m_enjoy:enjoyed,
-         	m_desc:description        
-         });*/
          
          console.log("success");
 	}
@@ -566,37 +530,15 @@ function updateData(detail){
 		}    
 		
 		
- var viewupdate = ' <div class = "movdetail" >'+
-  '<div><h2>'+mname+'</h2></div>'+
-   '<div class="second-level">'+
-     '<div class="col1">'+
-     '<img src='+murl+'>'+
-     '<div class="rating">'+
-       '<span id="star0">☆</span><span id="star1">☆</span><span id="star2">☆</span>'+
-       '<span id="star3">☆</span><span id="star4">☆</span>'+
-     '</div>'+
-     '</div>'+
-     
-   '<div class="col2">'+
+ var viewupdate = 
     ' <div>'+
      ' <form>'+
-      '<label for="mname" id="l1">Movie Name</label>'+
-      '<input type="text" id="mname" name="moviename" placeholder="Latest movie you watched ...">'+
+     ' <div class="name" id="spname"> <span> '+mname+' </span></div>'+
+     ' <div class="name" id="spname2"> <span> Genre: &nbsp&nbsp'+mgenre+' </span></div>'+
 
       '<label for="date1" id="l2">When did you watch this movie?</label>'+
       '<input type="date" name="wday" id="movdate">'+
-
-      '<label for="genre" id="l3">Genre</label>'+
-      '<select id="Genre" name="Genre">'+
-    '<option value="None" selected></option>'+
-		'<option value="Action">Action</option>'+
-		'<option value="Comedy">Comedy</option>'+
-		'<option value="Drama">Drama</option>'+
-		'<option value="Family&Kids">Family & Kids</option>'+
-		'<option value="Horror&Scifi">Horror & Scifi</option>'+
-		'<option value="Documentries">Documentries</option>'+
-    '</select>'+
-
+           
      ' <label for="rate" id="l4">Rating</label>'+
       '<select id="rrate" name="Rate">'+
     '<option value="0" selected></option>'+
@@ -620,68 +562,86 @@ function updateData(detail){
     '<label for="movimg" id="l7">Movie Image </br></label>'+
     '<input type="file" id="movimg" name="movimage" accept=".jpg,.jpeg,.png">'+
     '<div class="addsub">'+
-    '<input type="button" value="Submit" onclick="submitupdateData()"></div>'+
+    '<input type="button" value="Submit" onclick="submitupdateData(\''+ detail +'\')"></div>'+
    '</form>'+
-   '</div>'+
-   '</div></div></div>';
+   '</div>';
    
-		document.getElementById("sub-contain").innerHTML=viewupdate;
+		document.getElementById("updatedom").innerHTML=viewupdate;
+		document.getElementById("update").remove();
+		document.getElementById("del").remove();
 		
-		if (typeof(Storage) !== "undefined"){
-      		localStorage.setItem("current", "viewdetail");
-      		localStorage.setItem("detail",mdetail);
-      	}
-		 
-		 if(mrate==1){
-		     document.getElementById("star0").style.color="gold";
-		     document.getElementById("star1").style.color="white";
-		     document.getElementById("star2").style.color="white";	
-		     document.getElementById("star3").style.color="white";
-		     document.getElementById("star4").style.color="white";   		     
-		 }
-		 
-		 if(mrate==2){
-		     document.getElementById("star0").style.color="gold";
-		     document.getElementById("star1").style.color="gold";
-		     document.getElementById("star2").style.color="white";	
-		     document.getElementById("star3").style.color="white";
-		     document.getElementById("star4").style.color="white";   		     
-		 }
-		 if(mrate==3){
-		     document.getElementById("star0").style.color="gold";
-		     document.getElementById("star1").style.color="gold";
-		     document.getElementById("star2").style.color="gold";	
-		     document.getElementById("star3").style.color="white";
-		     document.getElementById("star4").style.color="white";   		     
-		 }
-		 if(mrate==4){
-		     document.getElementById("star0").style.color="gold";
-		     document.getElementById("star1").style.color="gold";
-		     document.getElementById("star2").style.color="gold";	
-		     document.getElementById("star3").style.color="gold";
-		     document.getElementById("star4").style.color="white";   		     
-		 }
-		 if(mrate==5){
-		     document.getElementById("star0").style.color="gold";
-		     document.getElementById("star1").style.color="gold";
-		     document.getElementById("star2").style.color="gold";	
-		     document.getElementById("star3").style.color="gold";
-		     document.getElementById("star4").style.color="gold";   		     
-		 }		
-    });
-    
-     
-       
+		
+    });    
 }
 
 
-function logout(){
+
+function submitupdateData(detail){
+
+    var detArray = detail.split("%");
+    var path = '/users/'+UID+'/'+detArray[1]+'/'+detArray[0]+'/';
+
+	date=document.getElementById("movdate").value;
+	rating=document.getElementById("rrate").value;
+	enjoyed=document.getElementById("enjoy").value;
+	description=document.getElementById("desc1").value;
+    uploader=document.getElementById("movimg").files;
+    
+
+
+console.log(uploader);
+
+     if(uploader.length != 0){
+     
+     
+     
+     } else {
+        
+
+  		var updates = {};
+    if (date){
+
+    	updates[path+"m_date"]=date;
+    }
+    
+    if(rating !== "0"){
+
+    	updates[path+"m_rating"]=rating;
+    }
+    
+    if(enjoyed !== "None"){
+
+    updates[path+"m_enjoy"]=enjoyed;
+    }   
+    
+    if(description!==" "){
+
+    	updates[path+"m_desc"]=description;
+    } 
+
+
+
+  return firebase.database().ref().update(updates).then(function(snapshot){
+      console.log(snapshot);
+      showDetail(detail);
+  }, function(error){
+     console.log(error);
+  });
+     }
+}
+
+function logout() {
 	firebase.auth().signOut().then(function() {
+	    if (typeof(Storage) !== "undefined"){
+          localStorage.setItem("current", undefined);
 		window.location.href="index.html";
 	    console.log("logged out succesfully!");
+     	}
 	}, function(error){
-	   console.log(error);
+	     console.log(error);
 	});
-
 }
+
+
+
 
