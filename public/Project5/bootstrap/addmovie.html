@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Movies-BootStrap</title>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <link rel="stylesheet" href="./css/BS_add.css">
+      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+                .scrollmenu {
+              background-color: #333;
+              overflow: auto;
+              white-space: nowrap;
+              }
+
+                .scrollmenu a {
+              display: inline-block;
+              color: white;
+              text-align: center;
+              padding: 14px;
+              text-decoration: none;
+              }
+              .scrollmenu a:hover {
+              background-color: #777;
+              }
+    </style>
+
+  </head>
+
+
+
+ <body>
+
+ <header class="navbar navbar-inverse">
+    <div class="container">
+
+      <nav role = "navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">MovieDex</a>
+          </div>
+
+          <ul class="nav navbar-nav">
+              <!-- <li class="active"><a href="#"> a<span class="sr-only">(current)</span></a></li> -->
+
+                 <li class="li1"><a href="viewmov.html">My Movies</a></li>
+                 <li class="li1"><a href="addmovie.html">Add Movies</a></li>
+                 <li class="li1"><form class="navbar-form navbar-left" role="search">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Search</button>
+                                </form>
+                 </li>
+                 <li class="li3">&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+
+                 <li class="li2"><a href="#"><span class="drop glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp&nbspBibek Kshetri</span></a>
+
+                </li>
+                <li class="li3">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+                <li class="li3"><a href="index.html"><span class="drop glyphicon glyphicon-lock" aria-hidden="true">&nbspLogout</span></a></li>
+
+            </ul>
+        </nav>
+    </div>
+ </header>
+
+    <!-- start div container after header -->
+    <div class="jumbotron">
+     <div class="container">
+       <h1 class="head">Add New Movie</h1>
+        <p>Please input movie information and image below!</p>
+     </div>
+    </div>
+    <div class="container">
+      <div class="row">
+       <div class="col-md-6">
+          <table class="column add tab" border = "2" cellspacing="5" padding="5px">
+            <tr>
+            <th> Movie Description </th>
+            </tr>
+            <tr><td>
+              <br>
+              &nbsp&nbsp Movie name   : &nbsp <input type = "text" name="movname" value="Movie name" />
+              <br><br>
+              &nbsp&nbsp Genre        : &nbsp <select name="dropdown">
+                <option value="Action" selected>Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Family">Family & Kids</option>
+                <option value="Horror">Horror & Scifi</option>
+                <option value="Documentries">Documentries</option>
+                </select>
+              <br><br>
+              &nbsp&nbsp Ratings      : &nbsp 1 <input type = "radio" name="rate" value="1"/>
+              &nbsp 2 <input type = "radio" name="rate" value="2"/>
+              &nbsp 3 <input type = "radio" name="rate" value="3"/>
+              &nbsp 4 <input type = "radio" name="rate" value="4"/>
+              &nbsp 5 <input type = "radio" name="rate" value="5"/>
+              <br><br>
+              &nbsp&nbsp Enjoyed?      : &nbsp Yes <input type = "radio" name="enj" value="yes"/>
+              &nbsp No <input type = "radio" name="enj" value="no"/>
+              <br><br>
+              &nbsp&nbsp Recommended By: &nbsp <select name="dropdown">
+                <option value="Friends" selected>Friends</option>
+                <option value="Family">Family</option>
+                <option value="Family">Email</option>
+                <option value="Family">Advertisement</option>
+                <option value="Family">Internet</option>
+                </select>
+              <br><br>
+              &nbsp&nbsp Watched Date  : &nbsp <input type = "date" name="date" value="mm/dd/yyyy"/>
+              <br><br>
+              &nbsp&nbsp Description : </br>
+              <br>
+               <textarea rows="5" cols="50" name="description">
+               Enter description here...
+               </textarea>
+              <br><br>
+
+            </td></tr>
+          </table>
+       </div>
+        <div class="col-md-6">
+          <table class="column add tab" border = "2" cellspacing="5" padding="5px">
+            <tr>
+            <th> Movie Image </th>
+            </tr>
+            <tr><td>
+              <br>
+              &nbsp&nbsp Upload Image: <br>
+              <br><br><br><br><br>
+
+              &nbsp&nbsp <input type="file" name="fileupload" accept="image/*" />
+              <br><br>
+              &nbsp&nbsp <span class="span1"><input type ="submit" name="add" value="   Add Movie   " ></span>
+              <br><br>
+            </td></tr>
+          </table>
+        </div>
+     </div>
+    </div>
+
+
+</body>
+</html>

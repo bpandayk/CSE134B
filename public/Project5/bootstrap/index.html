@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>MovieDex-Login-Using Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  
+</head>
+<body>
+  <header class="navbar-inverse" role = "banner">
+      <div class="container">
+        <nav role= "navigation" >
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MovieDex</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+  </header>
+  
+    <div class="container">
+      <div class="row main">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            <hr/>
+          </div>
+        </div>
+        <div class="main-login main-center">
+          <form class="form-horizontal" method="post" action="#">
+            <div class="form-group group1">
+              <label for="username" class="cols-sm-2 control-label">Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="username" id="username"  placeholder="Enter Username"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group group1">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <input type="password" class="form-control" name="password" id="password"  placeholder="Enter Password"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group ">
+              <input type="checkbox" checked="checked"> Remember Me
+              <br>
+              <a href="viewmov.html"><button type="button" class="btn btn-primary btn-lg btn-block login-button">Login</button></a>
+              <br>
+              <span class="psw">Forgot Password?</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+</body>
+</html>
