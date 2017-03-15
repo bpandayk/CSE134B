@@ -419,6 +419,7 @@ var path = '/users/'+UID+'/'+detArray[1]+'/'+ detArray[0];
 function submitData(){
 	var ret = validateForm();
 	var imgname =  moviename.split(' ').join('');
+	moviename = moviename.toUpperCase();
     var downloadURL;
 
 
@@ -463,7 +464,7 @@ function submitData(){
        
          var fullUrl= path + '/' + imgname;
          	console.log(fullUrl);
-         return firebase.database().ref(fullUrl).set({
+         return firebase.database().ref(fullUrl).set({ 
          	m_name: moviename,
          	m_date: date,
          	m_genre: genre,
@@ -666,6 +667,16 @@ console.log(uploader);
      console.log(error);
   });
      }
+}
+
+
+function searchDom(){
+	var term = document.getElementById("srch").value;
+	var path = '/users/'+UID+'/';
+	if(term){
+		
+	}
+	
 }
 
 function logout() {
