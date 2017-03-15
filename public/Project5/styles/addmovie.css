@@ -55,7 +55,7 @@ border-width: 2px;
 }
 
 
-input[type=text], input[type=date], input[type=file], select {
+ee>input[type=text], input[type=date], input[type=file], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
