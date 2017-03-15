@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Movie</title>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/addmovie.css">
+    <link rel="stylesheet" href="styles/viewdetail.css">
+    <link rel="stylesheet" href="styles/viewmov.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/addmovies.js"></script>
+
+  </head>
+  
+  
+  <body onload="mybodyLoad()">
+
+<header class="navbar">
+<div class="container-fluid header">
+          <nav role = "navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand title" href="#">MovieDex</a>
+          </div>
+
+           <ul class="nav navbar-nav">
+          <!--   <li><span class = "title"> MOVIEDEX </span> </li> -->
+             <li class="li1"><input type="button" onclick="myMovieDom()" value="My Movies"></button></li>
+             <li class="li1"><input type="button" onclick="addMovieDom()" value="Add Movies"></button></li>
+            <li class="li1">
+            <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+
+            </div> <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+             <li class="li1"><input type="button" onclick="searchDom()" value="Search"></button></li>
+             <li class="li3">&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+             <li class="li2"><a href="#" class="drpbtn"><span class="drop" id="dropmenu"> </span></a>
+               <div class = "dropdown-menu">
+                  <input type="button" onclick="accInfo()" value="Account Info"></button>
+                  <input type="button" onclick="logout()" value="Logout"></button>
+               </div>
+            </li>
+            </li>
+           </ul>
+        </nav>
+  </div>
+</header>
+
+
+
+<div class = "sub-container" id="sub-contain">
+   <div class="second-level" id="secondlvl"> </div>
+</div>
+
+
+
+
+</body>
+
+</html>
