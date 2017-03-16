@@ -18,7 +18,7 @@
   
 <body onload="mybodyLoad()">
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
@@ -29,9 +29,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a  href="javascript:void(0);" onclick="myMovieDom()"><span class="menu">My Movies</span></a></li>
+        <li class="hmenu"><a  href="javascript:void(0);" onclick="myMovieDom()"><span class="menu">My Movies</span></a></li>
         
-        <li><a href="javascript:void(0);" onclick="addMovieDom()"><span class="menu">Add Movies</span></a></li>
+        <li class="hmenu"><a href="javascript:void(0);" onclick="addMovieDom()"><span class="menu">Add Movies</span></a></li>
        </ul>
 		<div class="pull-left">
 		  <form class="navbar-form" role="search">
@@ -45,13 +45,14 @@
 		</div>
       <ul class="nav navbar-nav navbar-right" role="search">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span class="menu"> Hi Bibek</span><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="javascript:void(0);" onclick="accInfo()"><span class="sub-menu">Account</span></a></li>
-            <li><a href="javascript:void(0);" onclick="logout()"><span class="sub-menu">Logout</span></a></li>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-user"></span><span class="menu" id="menu"> Hi Bibek</span><span class="caret"></span></a>
+          <ul class="dropdown-menu" style="color:#09233d;">
+            <li class="hmenu"><a href="javascript:void(0);" onclick="accInfo()"> <span class="sub-menu"> Account</span></a></li>
+            <li class="hmenu"><a href="javascript:void(0);" onclick="logout()"> <span class="sub-menu">Logout</span></a></li>
           </ul>
         </li>
       </ul>
+    </div>
  </div>
 </nav>
 
