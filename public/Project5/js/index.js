@@ -38,11 +38,11 @@ function signIn() {
   console.log(email);
 
   if (!email || !pass) {
-    document.getElementById('signInFailMsg').style.visibility = "visible";
+    document.getElementById('FailMsg').style.visibility = "visible";
     return console.log('Email and password required for login.');
   }
   else {
-    document.getElementById('signInFailMsg').style.visibility = "hidden";
+    document.getElementById('FailMsg').style.visibility = "hidden";
   }
 
   firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
@@ -50,7 +50,8 @@ function signIn() {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log('Sign-In Error', error);
-    document.getElementById('signInFailMsg').style.visibility = "visible";
+    document.getElementById('FailMsg').style.visibility = "visible";
+    document.getElementById('FailMsg').innerHTML = "Sign-In Failed: Please try again with a valid email and password. Or, create a new account.";
   });
 }
 
@@ -64,22 +65,23 @@ function signUp() {
   if (regPass != regPassCheck) {
     return console.log('Passwords do not match.');
   }
-    document.getElementById('signUpFailMsg').style.visibility = "hidden";
+  document.getElementById('FailMsg').style.visibility = "hidden";
   firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(snapshot) {
-    // The signed-in user info.
-    user = snapshot.user;
+  // The signed-in user info.
+  user = snapshot.user;
 
-    user.updateProfile({ displayName: regName }).then(function() {
-        window.location.href="MovieDex.html";      // Update successful.
-    }, function(error) {
-      // An error happened.
-      console.log('Error updating display name.', error);
+  user.updateProfile({ displayName: regName }).then(function() {
+      window.location.href="MovieDex.html";      // Update successful.
+  }, function(error) {
+    // An error happened.
+    console.log('Error updating display name.', error);
     });
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    document.getElementById('signUpFailMsg').style.visibility = "visible";
+    document.getElementById('FailMsg').style.visibility = "visible";
+    document.getElementById('FailMsg').innerHTML = "Sign-Up Failed: Please make sure email has not been used and passwords match.";
     return console.log('Sign-Up Error', error);
     // ...
   });
@@ -105,7 +107,8 @@ function signInGoog() {
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
   console.log("Error signing in with Google.", error);
-  document.getElementById('signInFailMsg').style.visibility = "visible";
+  document.getElementById('FailMsg').style.visibility = "visible";
+  document.getElementById('FailMsg').innerHTML = "Sign-In Failed: Please try again with a valid email and password. Or, create a new account.";
   });
 
 }
@@ -123,7 +126,7 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
     console.log('User', firebaseUser);
-    window.location.href="MovieDex.html";
+    window.location.href="../MovieDex.html";
   }
   else {
     console.log('User not logged in.');

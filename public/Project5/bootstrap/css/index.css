@@ -1,0 +1,151 @@
+body {
+  background: black url("../images/bodybg1.jpg") no-repeat fixed top;
+  background-size: 100%;
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+	font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#signInFailMsg, #signUpFailMsg {
+  color: red;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.panel-signIn {
+	border-color: #ccc;
+  filter: alpha(opacity=50);
+  opacity: 0.85;
+
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+
+.panel-signIn > .panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align:center;
+  font-size: 24px;
+}
+
+.panel-signIn > .panel-heading a {
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+.panel-signIn > .panel-heading a.active {
+	color: #104E8B;
+	font-size: 22px;
+}
+
+.panel-signIn > .panel-heading hr {
+	height: 1px;
+	border: 0;
+  margin-top: 10px;
+	margin-bottom: 0px;
+  clear: both;
+
+	background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+
+.panel-signIn input[type="text"], .panel-signIn input[type="email"],
+.panel-signIn input[type="password"] {
+
+	height: 46px;
+	border: 1px solid #ddd;
+	font-size: 17px;
+
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.panel-signIn input:hover,
+.panel-signIn input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+
+.label {
+  color: black;
+  font-size: 10px;
+}
+
+.jumbotron {
+  color: white;
+  text-align: center;
+  background-image: url('../images/film6.jpg');
+  background-color: black;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.tName {
+  color: white;
+}
+.navbar-inverse {
+	border: 0;
+}
+.navbar-inverse .navbar-nav li a {
+	color: white;
+	font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	background: gray;
+}
+
+.btn-signIn, .btn-forgot, .btn-signUp {
+	height: auto;
+	outline: none;
+  padding: 14px 0;
+  margin-bottom: 10px;
+
+  background-color: #104E8B;
+	color: #fff;
+  border-color: black;
+
+  text-transform: uppercase;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.btn-signIn:hover, .btn-signIn:focus,
+.btn-signUp:hover, .btn-signUp:focus,
+.btn-forgot:hover, .btn-forgot:focus {
+	color: #fff;
+	background-color: #104E8B;
+	border-color: black;
+}
+
+.forgot-password {
+	color: black;
+}
+
+.forgot-password:hover, .forgot-password:focus {
+	text-decoration: underline;
+	color: black;
+}
