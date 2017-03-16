@@ -7,13 +7,15 @@
 
 
 body {
-  margin:0;
-  padding:0;
+  padding-top:70px;
   background: black url("../images/bodybg1.jpg") no-repeat fixed top;
   background-size: 60%;
 }
 
+.navbar{
+  background: #09233d;
 
+}
 
 
 .titlelogin {
@@ -65,6 +67,10 @@ body {
 	font-weight:bold;
 }
 
+
+.hmenu:hover{
+  border-bottom:1px solid white;
+}
 
 /*addmovie css*/
 
@@ -313,6 +319,11 @@ margin-bottom:20px;
   height: 250px;
   display: inline-block;
   visibility: visible;
+}
+
+.detailimg{
+  width: 220px;
+  height: 250px;
 }
 
 .mainimg{

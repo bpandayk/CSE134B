@@ -366,7 +366,7 @@ var path = '/users/'+UID+'/'+detArray[1]+'/'+ detArray[0];
   '<div><h2>'+mname+'</h2></div>'+
    '<div class="second-level">'+
      '<div class="col1">'+
-     '<img src='+murl+'>'+
+     '<img src='+murl+' class="detailimg">'+
      '<div class="rating">'+
        '<span id="star0">☆</span><span id="star1">☆</span><span id="star2">☆</span>'+
        '<span id="star3">☆</span><span id="star4">☆</span>'+
@@ -563,10 +563,10 @@ function updateData(detail){
      ' <div class="name" id="spname2"> <span> Genre: &nbsp&nbsp'+mgenre+' </span></div>'+
 
       '<label for="date1" id="l2">When did you watch this movie?</label>'+
-      '<input type="date" name="wday" id="movdate">'+
+      '<input type="date" name="wday" id="movdate" style="color:black;">'+
            
      ' <label for="rate" id="l4">Rating</label>'+
-      '<select id="rrate" name="Rate">'+
+      '<select id="rrate" name="Rate" style="color:black;">'+
     '<option value="0" selected></option>'+
 		'<option value="1">1</option>'+
 		'<option value="2">2</option>'+
@@ -576,14 +576,14 @@ function updateData(detail){
     '</select>'+
 
     '<label for="enjoy" id="l5">Did you Enjoy the movie?</label>'+
-      '<select id="enjoy" name="enjoy">'+
+      '<select id="enjoy" name="enjoy" style="color:black;">'+
     '<option value="None"></option>'+
 		'<option value="yes">Yes</option>'+
 		'<option value="no">No</option>'+
     '</select>'+
 
     '<label for="desc" id="l6">Movie Description</label>'+
-    '<textarea rows="8"  id="desc1"> </textarea>'+
+    '<textarea rows="8"  id="desc1" style="color:black;"> </textarea>'+
 
     '<label for="movimg" id="l7">Movie Image </br></label>'+
     '<input type="file" id="movimg" name="movimage" accept=".jpg,.jpeg,.png">'+
@@ -702,7 +702,7 @@ function searchDom(){
 
 	if(term){
 		
-
+        term = term.toUpperCase();
 		return firebase.database().ref(path1).once('value').then(function(snapshot){
     var retu=[];
 		var ret = snapshot.val();
@@ -714,7 +714,7 @@ function searchDom(){
       for (j in key2){
 				if(ret[key[i]][key2[j]].m_name == term){
           retu.push(ret[key[i]][key2[j]]);
-			    temp +=  '<div> <img src=' + retu[0].m_url +
+			    temp +=  '<div> <img class="mainimg" src=' + retu[0].m_url +
 				  ' onclick='+'"showDetail(\''+ key2[j] +'%'+ret[key[i]][key2[j]].m_genre+'\')"> </div>';
         }
       }
@@ -722,8 +722,12 @@ function searchDom(){
     }  
 
 
- 
+         if (retu.length == 0){
+           var tem = '<div style="padding-top: 20px; color:red; font-size:25px; "><span > Sorry !'+ term +' could not be found. Please click Add movies to add.';
+		   document.getElementById("sub-contain").innerHTML = tem;
+        } else {
 		 document.getElementById("sub-contain").innerHTML = temp;
+		}
 
 	});	
 	}
