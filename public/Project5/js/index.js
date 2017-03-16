@@ -1,6 +1,17 @@
 var emailLogin, passLogin, signInButton, googSignInBtn;
-var userReg, passReg1, passReg2, emailReg, signUpBtn, username;
+var userReg, passReg1, passReg2, emailReg, signUpBtn;
 var user;
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
+  authDomain: "cse134b-team-alpha.firebaseapp.com",
+  databaseURL: "https://cse134b-team-alpha.firebaseio.com",
+  storageBucket: "cse134b-team-alpha.appspot.com",
+  messagingSenderId: "730498444325"
+};
+
+firebase.initializeApp(config);
 
 window.onload = function() {
 
@@ -59,16 +70,15 @@ function signUp() {
   const regPass = passReg1.value;
   const regPassCheck = passReg2.value;
   const regName = userReg.value;
-  username = regName;
 
   if (regPass != regPassCheck) {
     return console.log('Passwords do not match.');
   }
-    document.getElementById('signUpFailMsg').style.visibility = "hidden";
-  firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(snapshot) {
-    // The signed-in user info.
-    user = snapshot.user;
 
+  firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(result) {
+    // The signed-in user info.
+    user = result.user;
+    document.getElementById('signUpFailMsg').style.visibility = "hidden";
     user.updateProfile({ displayName: regName }).then(function() {
         window.location.href="MovieDex.html";      // Update successful.
     }, function(error) {
@@ -110,15 +120,7 @@ function signInGoog() {
 
 }
 
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
-  authDomain: "cse134b-team-alpha.firebaseapp.com",
-  databaseURL: "https://cse134b-team-alpha.firebaseio.com",
-  storageBucket: "cse134b-team-alpha.appspot.com",
-  messagingSenderId: "730498444325"
-};
-firebase.initializeApp(config);
+
 
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
@@ -129,3 +131,4 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
     console.log('User not logged in.');
   }
 });
+
