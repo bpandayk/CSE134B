@@ -1,4 +1,4 @@
-
+/*general css*/
 @font-face {
   font-family: titleFont;
   src: url("../fonts/Prototype.ttf");
@@ -12,6 +12,7 @@ body {
   background: black url("../images/bodybg1.jpg") no-repeat fixed top;
   background-size: 60%;
 }
+
 
 
 
@@ -64,4 +65,331 @@ body {
 	font-weight:bold;
 }
 
+
+/*addmovie css*/
+
+.sub-container  {
+  position:relative;
+  left: 0%;
+  right: 30%;
+  top:60px;
+  width:40%;
+}
+
+
+.second-level {
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.col1{
+  float:left;
+  position:relative;
+  width:30%;
+  height:40%;
+  margin:10px;
+}
+
+.col2{
+  float:left;
+  width:40%;
+  height:40%;
+  margin:10px;
+  color: white;
+  font-family: Big Caslon;
+  font-weight: bold;
+}
+
+.contains{
+
+  display: inline-block;
+ 
+}
+
+.sp1{
+color:white;
+font-family: Arial-Black;
+font-weight:bold;
+text-align:center;
+}
+
+.imag{
+padding:10px;
+
+}
+
+img{
+border-style:solid;
+border-color:white;
+border-width: 2px;
+}
+
+
+#addmov1 > input[type=text], input[type=date], input[type=file], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#desc1{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;  
+
+}
+
+
+.addsub{
+    padding-top:10px;
+
+}
+.addsub > input[type=button] {
+    width: 100%;
+    background-color: #09233d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size:20px;
+
+}
+
+
+input[type=submit]:hover {
+    padding-top:10px;
+    
+}
+
+
+/*viewdetail css*/
+
+
+.movdetail{
+  position:relative;
+  left: 3%;
+  width:90%;
+  right:3%;
+  margin-top:80px;
+}
+
+.second-level {
+  position:relative;
+  width:100%;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.col1{
+  float:left;
+  position:relative;
+  left:10%
+  width:40%;
+  margin:10px;
+}
+
+.col2{
+  float:left;
+  position:relative;
+  width:50%;
+
+  margin-left:10%;
+  color: white;
+  font-family: Big Caslon;
+  font-weight: bold;
+}
+
+.col21{
+  float:left;
+  position:relative;
+  width:70%;
+
+  margin-left:15%;
+  color: white;
+  font-family: Big Caslon;
+  font-weight: bold;
+}
+
+
+h2{
+color: white;
+}
+
+
+
+.rating{
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+.star {
+ color:gold;
+}
+
+.star5 {
+color:white;
+}
+
+
+.gen2{
+ float: right;
+}
+
+.name {
+  font-weight:bold; 
+  font-family:Arial;
+  font-size: 20px;
+}
+.name, .desc, .genre1, .refer, .date {
+  border-bottom: solid 1px grey;
+  
+}
+
+.desc, .genre1, .refer, .date {
+  padding-bottom: 5px;
+  padding-top: 10px;
+
+}
+
+#del{
+background-color:red;
+margin-bottom:20px;
+}
+
+#spname, #spname2{
+  padding-bottom:10px;
+}
+
+
+
+/*viewmovie css*/
+
+.sub-container {
+  width: 50%;
+  position:absolute;
+  margin: 90px 0 0 -25%;
+  left: 50%;
+}
+
+.act {
+  margin-top:50px;
+}
+
+.genre {
+  margin-left:50px;
+  color:yellow;
+  position:relative;
+}
+
+.action {
+ margin-left:50px;
+ margin-right:50px;
+ margin-bottom: 80px;
+ overflow: auto;
+ white-space: nowrap;
+
+
+}
+
+/*.action  div {
+
+  width: 125px;
+  height: 178px;
+  display: inline-block;
+  padding: 20px;
+  visibility: visible;
+}*/
+
+.viewimg{
+  width: 220px;
+  height: 250px;
+  display: inline-block;
+  visibility: visible;
+}
+
+.mainimg{
+  width: 200px;
+  height: 240px;
+
+}
+
+.comedy {
+ margin-left:50px;
+ margin-right:50px;
+ margin-bottom: 80px;
+ overflow: auto;
+ white-space: nowrap;
+}
+
+
+
+.drama {
+ margin-left:50px;
+ margin-right:50px;
+ margin-bottom: 80px;
+ overflow: auto;
+ white-space: nowrap;
+}
+
+
+
+.family-kids {
+ margin-left:50px;
+ margin-right:50px;
+ margin-bottom: 80px;
+ overflow: auto;
+ white-space: nowrap;
+}
+
+
+.horror-scifi {
+ margin-left:50px;
+ margin-right:50px;
+ margin-bottom: 80px;
+ overflow: auto;
+ white-space: nowrap;
+}
+
+
+
+.documentries {
+ margin-left:50px;
+ margin-right:50px;
+ margin-bottom: 80px;
+ overflow: auto;
+ white-space: nowrap;
+}
+
+
+img {
+  border-style:solid;
+  border-color: white;
+   border-width: 5px;
+} 
+
+img:hover{
+  border-style:solid;
+  border-color: yellow;
+}
+
+input[type=button] {
+    width: 100%;
+    background-color: #09233d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size:20px;
+}
 

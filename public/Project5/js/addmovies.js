@@ -47,13 +47,7 @@ var searchMovie;
 
 
 var addMovieD = ' <div class="second-level" id="secondlvl">' +
-     '<div class="col1">'+
-      '<div class="tit1"> <span class="sp1"> Recently Watched </span></div>'+
-      '<div class="imag"><a href=" "><img src="images/12.jpg"></a></div>'+
-      '<div class="imag"><a href=" "><img src="images/21.jpg"></a></div>'+
-     ' <div class="imag"><a href=" "><img src="images/13.jpg"></a></div>'+
-   '</div>'+
-   '<div class="col2">'+
+   '<div class="col21">'+
     ' <div>'+
      ' <form class="form-horizontal" id = "addmov1">'+
       '<label for="mname" id="l1">Movie Name</label>'+
@@ -138,7 +132,7 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
    '<div><h2>Hello '+username.toUpperCase() +'!</h2></div>'+
    '<div class="second-level">'+
     ' <div class="col1">'+
-     '<img src='+imgurl+'>'+
+     '<img src='+imgurl+' style="width:200px; height:200px;">'+
      '</div>'+
      
   ' <div class="col2">'+
@@ -327,8 +321,8 @@ function getData(genre, id) {
 		  murl=ret[key[i]].m_url; 
 		  
 
-		  var temp =  '<div> <img src=' + murl +
-		  ' onclick='+'"showDetail(\''+ mdet +'%'+genre+'\')"> </div>';
+		  var temp =  '<div class="viewimg"> <img src=' + murl +
+		  ' onclick='+'"showDetail(\''+ mdet +'%'+genre+'\')" class="mainimg"> </div>';
 		  
 		  		  
 		  strin = strin + temp;
@@ -384,9 +378,9 @@ var path = '/users/'+UID+'/'+detArray[1]+'/'+ detArray[0];
    '<div class="col2" id="updatedom">'+
     ' <div class="name"> <span> '+mname+' </span></div>'+
      '<div class= "desc"> <p id="desc123">'+ mdesc+' </p>  </div>'+
-     '<div class= "genre"> <span class="gen1">'+ mgenre +'</span> <span class="gen2"> 115min </span> </div>'+
-     '<div class= "refer"> <span> Enjoyed:&nbsp&nbsp&nbsp&nbsp' +menjoy+'</span> </div>'+
-     '<div class= "date"> <span> Watched on:&nbsp&nbsp&nbsp&nbsp       '+ mdate +' </span> </div>'+
+     '<div class= "genre1"> <span> Genre </span> <span class="gen2">'+ mgenre+' </span> </div>'+
+     '<div class= "refer"> <span> Enjoyed </span> <span class="gen2">'+ menjoy+' </span> </div>'+
+     '<div class= "date"> <span> Watched on </span> <span class="gen2">'+ mdate+' </span> </div>'+
 
    '</div>'+
    '</div>'+

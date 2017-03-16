@@ -69,11 +69,7 @@ function signUp() {
     user = result.user;
     document.getElementById('signUpFailMsg').style.visibility = "hidden";
     user.updateProfile({ displayName: regName }).then(function() {
-        window.location.href="MovieDex.html";      // Update successful.
-    }, function(error) {
-      // An error happened.
-      console.log('Error updating display name.', error);
-    });
+        window.location.href="addmovie.html";      // Update successful.
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -122,7 +118,7 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
     console.log('User', firebaseUser);
-    window.location.href="MovieDex.html";
+    window.location.href="addmovie.html";
   }
   else {
     console.log('User not logged in.');

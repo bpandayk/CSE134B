@@ -26,12 +26,26 @@
 
 }
 
-.action  div {
+/*.action  div {
+
   width: 125px;
   height: 178px;
   display: inline-block;
   padding: 20px;
   visibility: visible;
+}*/
+
+.viewimg{
+  width: 220px;
+  height: 250px;
+  display: inline-block;
+  visibility: visible;
+}
+
+.mainimg{
+  width: 200px;
+  height: 240px;
+
 }
 
 .comedy {
@@ -43,12 +57,6 @@
 }
 
 
-.comedy  div {
-  width: 125px;
-  height: 178px;
-  display: inline-block;
-  padding: 20px;
-}
 
 .drama {
  margin-left:50px;
@@ -59,12 +67,6 @@
 }
 
 
-.drama  div {
-  width: 125px;
-  height: 178px;
-  display: inline-block;
-  padding: 20px;
-}
 
 .family-kids {
  margin-left:50px;
@@ -75,13 +77,6 @@
 }
 
 
-.family-kids  div {
-  width: 125px;
-  height: 178px;
-  display: inline-block;
-  padding: 20px;
-}
-
 .horror-scifi {
  margin-left:50px;
  margin-right:50px;
@@ -91,12 +86,6 @@
 }
 
 
-.horror-scifi  div {
-  width: 125px;
-  height: 178px;
-  display: inline-block;
-  padding: 20px;
-}
 
 .documentries {
  margin-left:50px;
@@ -107,17 +96,9 @@
 }
 
 
-.documentries  div {
-  width: 125px;
-  height: 178px;
-  display: inline-block;
-  padding: 20px;
-}
-
 img {
   border-style:solid;
   border-color: white;
-
 } 
 
 img:hover{

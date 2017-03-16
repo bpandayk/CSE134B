@@ -71,12 +71,12 @@ color:white;
   font-family:Arial;
   font-size: 20px;
 }
-.name, .desc, .genre, .refer, .date {
+.name, .desc, .genre1, .refer, .date {
   border-bottom: solid 1px grey;
   
 }
 
-.desc, .genre, .refer, .date {
+.desc, .genre1, .refer, .date {
   padding-bottom: 5px;
   padding-top: 10px;
 
