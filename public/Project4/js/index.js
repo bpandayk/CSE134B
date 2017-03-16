@@ -2,6 +2,17 @@ var emailLogin, passLogin, signInButton, googSignInBtn;
 var userReg, passReg1, passReg2, emailReg, signUpBtn;
 var user;
 
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
+  authDomain: "cse134b-team-alpha.firebaseapp.com",
+  databaseURL: "https://cse134b-team-alpha.firebaseio.com",
+  storageBucket: "cse134b-team-alpha.appspot.com",
+  messagingSenderId: "730498444325"
+};
+
+firebase.initializeApp(config);
+
 window.onload = function() {
 
   //Elements for email sign-in
@@ -109,15 +120,7 @@ function signInGoog() {
 
 }
 
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
-  authDomain: "cse134b-team-alpha.firebaseapp.com",
-  databaseURL: "https://cse134b-team-alpha.firebaseio.com",
-  storageBucket: "cse134b-team-alpha.appspot.com",
-  messagingSenderId: "730498444325"
-};
-firebase.initializeApp(config);
+
 
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
@@ -128,3 +131,4 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
     console.log('User not logged in.');
   }
 });
+

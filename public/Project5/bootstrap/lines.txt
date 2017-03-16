@@ -1,5 +1,0 @@
-     128 addmovie.html
-      39 index.html
-      65 viewdetail.html
-     166 viewmov.html
-     398 total

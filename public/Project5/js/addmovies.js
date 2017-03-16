@@ -44,9 +44,7 @@ var myMovie = '<div class = "titles"><h3 class="act"><span class = "genre"> '+
 var searchMovie;
 
 
-
-
-var addMovieD = ' <div class="second-level" id="secondlvl">' +
+var addMovieD = ' <div class=" second-level" id="secondlvl">' +
    '<div class="col21">'+
     ' <div>'+
      ' <form class="form-horizontal" id = "addmov1">'+
