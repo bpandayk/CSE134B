@@ -2,17 +2,6 @@ var emailLogin, passLogin, signInButton, googSignInBtn;
 var userReg, passReg1, passReg2, emailReg, signUpBtn;
 var user;
 
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
-  authDomain: "cse134b-team-alpha.firebaseapp.com",
-  databaseURL: "https://cse134b-team-alpha.firebaseio.com",
-  storageBucket: "cse134b-team-alpha.appspot.com",
-  messagingSenderId: "730498444325"
-};
-
-firebase.initializeApp(config);
-
 window.onload = function() {
 
   //Elements for email sign-in
@@ -80,11 +69,7 @@ function signUp() {
     user = result.user;
     document.getElementById('signUpFailMsg').style.visibility = "hidden";
     user.updateProfile({ displayName: regName }).then(function() {
-        window.location.href="MovieDex.html";      // Update successful.
-    }, function(error) {
-      // An error happened.
-      console.log('Error updating display name.', error);
-    });
+        window.location.href="addmovie.html";      // Update successful.
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -120,15 +105,22 @@ function signInGoog() {
 
 }
 
-
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAupx69r_nEJqhkmzUAelKgZhPoguFrbXY",
+  authDomain: "cse134b-team-alpha.firebaseapp.com",
+  databaseURL: "https://cse134b-team-alpha.firebaseio.com",
+  storageBucket: "cse134b-team-alpha.appspot.com",
+  messagingSenderId: "730498444325"
+};
+firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
     console.log('User', firebaseUser);
-    window.location.href="MovieDex.html";
+    window.location.href="addmovie.html";
   }
   else {
     console.log('User not logged in.');
   }
 });
-

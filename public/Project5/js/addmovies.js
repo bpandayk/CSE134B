@@ -44,26 +44,18 @@ var myMovie = '<div class = "titles"><h3 class="act"><span class = "genre"> '+
 var searchMovie;
 
 
-
-
-var addMovieD = ' <div class="second-level" id="secondlvl">' +
-     '<div class="col1">'+
-      '<div class="tit1"> <span class="sp1"> Recently Watched </span></div>'+
-      '<div class="imag"><a href=" "><img src="images/12.jpg"></a></div>'+
-      '<div class="imag"><a href=" "><img src="images/21.jpg"></a></div>'+
-     ' <div class="imag"><a href=" "><img src="images/13.jpg"></a></div>'+
-   '</div>'+
-   '<div class="col2">'+
+var addMovieD = ' <div class=" second-level" id="secondlvl">' +
+   '<div class="col21">'+
     ' <div>'+
-     ' <form>'+
+     ' <form class="form-horizontal" id = "addmov1">'+
       '<label for="mname" id="l1">Movie Name</label>'+
-      '<input type="text" id="mname" name="moviename" placeholder="Latest movie you watched ...">'+
+      '<input type="text" id="mname" name="moviename" placeholder="Latest movie you watched ..." style="color:black;">'+
 
-      '<label for="date1" id="l2">When did you watch this movie?</label>'+
-      '<input type="date" name="wday" id="movdate">'+
+      '<label for="date1" id="l2">Movie watched on</label>'+
+      '<input type="date" name="wday" id="movdate" style="color:black;">'+
 
       '<label for="genre" id="l3">Genre</label>'+
-      '<select id="Genre" name="Genre">'+
+      '<select id="Genre" name="Genre" style="color:black;">'+
     '<option value="None" selected></option>'+
 		'<option value="Action">Action</option>'+
 		'<option value="Comedy">Comedy</option>'+
@@ -74,7 +66,7 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
     '</select>'+
 
      ' <label for="rate" id="l4">Rating</label>'+
-      '<select id="rrate" name="Rate">'+
+      '<select id="rrate" name="Rate" style="color:black;">'+
     '<option value="0" selected></option>'+
 		'<option value="1">1</option>'+
 		'<option value="2">2</option>'+
@@ -84,14 +76,14 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
     '</select>'+
 
     '<label for="enjoy" id="l5">Did you Enjoy the movie?</label>'+
-      '<select id="enjoy" name="enjoy">'+
+      '<select id="enjoy" name="enjoy" style="color:black;">'+
     '<option value="None"></option>'+
 		'<option value="yes">Yes</option>'+
 		'<option value="no">No</option>'+
     '</select>'+
 
     '<label for="desc" id="l6">Movie Description</label>'+
-    '<textarea rows="8"  id="desc1"> </textarea>'+
+    '<textarea rows="8"  id="desc1" style="color:black;"> </textarea>'+
 
     '<label for="movimg" id="l7">Movie Image </br></label>'+
     '<input type="file" id="movimg" name="movimage" accept=".jpg,.jpeg,.png">'+
@@ -125,14 +117,46 @@ var addMovieD = ' <div class="second-level" id="secondlvl">' +
   var parser = JSON.parse(user);
   var UID = parser.uid;
   var username = parser.displayName;
+	var email = parser.email;
   //username = username.toUpperCase();
   console.log(parser);
 
-  
+ function accInfo(){
 
+    var pro = parser.providerId;
+    var imgurl= parser.photoURL;
+
+    var temp =  ' <div class = "movdetail" >'+
+   '<div><h2>Hello '+username.toUpperCase() +'!</h2></div>'+
+   '<div class="second-level">'+
+    ' <div class="col1">'+
+     '<img src='+imgurl+' style="width:200px; height:200px;">'+
+     '</div>'+
+     
+  ' <div class="col2">'+
+    ' <div class="name"> <span>'+ username.toUpperCase() +'</span></div>'+
+     ' <div class="desc"> <span> Memeber since 2017 </span></div>'+
+     '<div class="desc"> <span> Email: '+ email +' </span></div>'+
+     '<div class="desc"> <span> <a href="javascript:void(0);" onclick="resetPassword()" > Reset Password </a></div>'+
+     '<div class="desc2"><span id="confirm" style="color:red;"></span><div>'+
+  ' </div>'+
+  ' </div>';
+   console.log(temp);
+   document.getElementById("sub-contain").innerHTML=temp;
+} 
+
+function resetPassword(){
+		firebase.auth().sendPasswordResetEmail(email).then(function() {
+  		// Email sent.
+      
+      document.getElementById("confirm").innerHTML= "Email has been sent to "+ email + " to reset the Password.";
+		}, function(error) {
+  		// An error happened.
+		});
+}
   
 function mybodyLoad() {
-  document.getElementById("dropmenu").innerHTML="Hi "+ username + "  !";
+  //document.getElementById("dropmenu").innerHTML="Hi "+ username + "  !";
   var status = localStorage.getItem("current");
   if (status == "addMovie"){
      addMovieDom();
@@ -295,8 +319,8 @@ function getData(genre, id) {
 		  murl=ret[key[i]].m_url; 
 		  
 
-		  var temp =  '<div> <img src=' + murl +
-		  ' onclick='+'"showDetail(\''+ mdet +'%'+genre+'\')"> </div>';
+		  var temp =  '<div class="viewimg"> <img src=' + murl +
+		  ' onclick='+'"showDetail(\''+ mdet +'%'+genre+'\')" class="mainimg"> </div>';
 		  
 		  		  
 		  strin = strin + temp;
@@ -305,9 +329,11 @@ function getData(genre, id) {
 		}
 
 		 document.getElementById(id).innerHTML = strin;
-		 
-
 	});	
+
+
+
+
 }
 
 
@@ -315,7 +341,7 @@ function getData(genre, id) {
 
 function showDetail(mdetail){
 var name,date,enjoy,rate,url,desc;
-
+console.log(mdetail);
 var detArray = mdetail.split("%");
 var path = '/users/'+UID+'/'+detArray[1]+'/'+ detArray[0];
 
@@ -350,9 +376,9 @@ var path = '/users/'+UID+'/'+detArray[1]+'/'+ detArray[0];
    '<div class="col2" id="updatedom">'+
     ' <div class="name"> <span> '+mname+' </span></div>'+
      '<div class= "desc"> <p id="desc123">'+ mdesc+' </p>  </div>'+
-     '<div class= "genre"> <span class="gen1">'+ mgenre +'</span> <span class="gen2"> 115min </span> </div>'+
-     '<div class= "refer"> <span> Enjoyed:&nbsp&nbsp&nbsp&nbsp' +menjoy+'</span> </div>'+
-     '<div class= "date"> <span> Watched on:&nbsp&nbsp&nbsp&nbsp       '+ mdate +' </span> </div>'+
+     '<div class= "genre1"> <span> Genre </span> <span class="gen2">'+ mgenre+' </span> </div>'+
+     '<div class= "refer"> <span> Enjoyed </span> <span class="gen2">'+ menjoy+' </span> </div>'+
+     '<div class= "date"> <span> Watched on </span> <span class="gen2">'+ mdate+' </span> </div>'+
 
    '</div>'+
    '</div>'+
@@ -672,10 +698,36 @@ console.log(uploader);
 
 function searchDom(){
 	var term = document.getElementById("srch").value;
-	var path = '/users/'+UID+'/';
+	var path1 = '/users/'+UID;
+
 	if(term){
 		
+
+		return firebase.database().ref(path1).once('value').then(function(snapshot){
+    var retu=[];
+		var ret = snapshot.val();
+		var key= Object.keys(ret);
+    var temp=" ";
+
+    for (i in key){
+    	var key2 = Object.keys(ret[key[i]]);
+      for (j in key2){
+				if(ret[key[i]][key2[j]].m_name == term){
+          retu.push(ret[key[i]][key2[j]]);
+			    temp +=  '<div> <img src=' + retu[0].m_url +
+				  ' onclick='+'"showDetail(\''+ key2[j] +'%'+ret[key[i]][key2[j]].m_genre+'\')"> </div>';
+        }
+      }
+        
+    }  
+
+
+ 
+		 document.getElementById("sub-contain").innerHTML = temp;
+
+	});	
 	}
+
 	
 }
 
