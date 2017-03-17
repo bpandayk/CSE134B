@@ -117,31 +117,47 @@ var addMovieD = ' <div class=" second-level" id="secondlvl">' +
   var parser = JSON.parse(user);
   var UID = parser.uid;
   var username = parser.displayName;
+  var em;
 	var email = parser.email;
-  //username = username.toUpperCase();
+	if(username){
+		username = username.toUpperCase();
+	   // document.getElementById("menu").innerHTML='Hi '+ username;
+	} else {
+	    em = email.split('@');
+		//document.getElementById("menu").innerHTML='Hi '+ em[0];
+	}
   console.log(parser);
 
  function accInfo(){
 
     var pro = parser.providerId;
     var imgurl= parser.photoURL;
+    var temp = ' <div class = "movdetail" >';
+    if(username) {
+    	temp = temp + '<div><h2>Hello '+username +'!</h2></div>';
+    } else {
+        temp = temp + '<div><h2>Hello '+email +'!</h2></div>';
+    }
+  
 
-    var temp =  ' <div class = "movdetail" >'+
-   '<div><h2>Hello '+username.toUpperCase() +'!</h2></div>'+
-   '<div class="second-level">'+
+   temp = temp + '<div class="second-level">'+
     ' <div class="col1">'+
      '<img src='+imgurl+' style="width:200px; height:200px;">'+
      '</div>'+
      
-  ' <div class="col2">'+
-    ' <div class="name"> <span>'+ username.toUpperCase() +'</span></div>'+
-     ' <div class="desc"> <span> Memeber since 2017 </span></div>'+
+  ' <div class="col2">';
+  
+      if(username) {
+    	temp = temp +   ' <div class="name"> <span>'+ username +'</span></div>';
+    } 
+     
+     temp = temp + ' <div class="desc"> <span> Memeber since 2017 </span></div>'+
      '<div class="desc"> <span> Email: '+ email +' </span></div>'+
      '<div class="desc"> <span> <a href="javascript:void(0);" onclick="resetPassword()" > Reset Password </a></div>'+
      '<div class="desc2"><span id="confirm" style="color:red;"></span><div>'+
   ' </div>'+
   ' </div>';
-   console.log(temp);
+
    document.getElementById("sub-contain").innerHTML=temp;
 } 
 
@@ -156,6 +172,11 @@ function resetPassword(){
 }
   
 function mybodyLoad() {
+	if(username){
+	    document.getElementById("menu").innerHTML='Hi '+ username;
+	} else {
+		document.getElementById("menu").innerHTML='Hi '+ em[0];
+	}
   //document.getElementById("dropmenu").innerHTML="Hi "+ username + "  !";
   var status = localStorage.getItem("current");
   if (status == "addMovie"){
@@ -330,10 +351,6 @@ function getData(genre, id) {
 
 		 document.getElementById(id).innerHTML = strin;
 	});	
-
-
-
-
 }
 
 

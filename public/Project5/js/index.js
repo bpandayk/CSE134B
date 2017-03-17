@@ -49,11 +49,11 @@ function signIn() {
   console.log(email);
 
   if (!email || !pass) {
-    document.getElementById('FailMsg').style.visibility = "visible";
+    document.getElementById('signInFailMsg').style.visibility = "visible";
     return console.log('Email and password required for login.');
   }
   else {
-    document.getElementById('FailMsg').style.visibility = "hidden";
+    document.getElementById('signInFailMsg').style.visibility = "hidden";
   }
 
   firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
@@ -61,8 +61,7 @@ function signIn() {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log('Sign-In Error', error);
-    document.getElementById('FailMsg').style.visibility = "visible";
-    document.getElementById('FailMsg').innerHTML = "Sign-In Failed: Please try again with a valid email and password. Or, create a new account.";
+    document.getElementById('signInFailMsg').style.visibility = "visible";
   });
 }
 
@@ -76,23 +75,16 @@ function signUp() {
     return console.log('Passwords do not match.');
   }
 
-
   firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(result) {
     // The signed-in user info.
-    user = result.user;
+   
     document.getElementById('signUpFailMsg').style.visibility = "hidden";
-    user.updateProfile({ displayName: regName }).then(function() {
-        window.location.href="MovieDex.html";      // Update successful.
-    }, function(error) {
-      // An error happened.
-      console.log('Error updating display name.', error);
-    });
+
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    document.getElementById('FailMsg').style.visibility = "visible";
-    document.getElementById('FailMsg').innerHTML = "Sign-Up Failed: Please make sure email has not been used and passwords match.";
+    document.getElementById('signUpFailMsg').style.visibility = "visible";
     return console.log('Sign-Up Error', error);
     // ...
   });
@@ -118,20 +110,49 @@ function signInGoog() {
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
   console.log("Error signing in with Google.", error);
-  document.getElementById('FailMsg').style.visibility = "visible";
-  document.getElementById('FailMsg').innerHTML = "Sign-In Failed: Please try again with a valid email and password. Or, create a new account.";
+  document.getElementById('signInFailMsg').style.visibility = "visible";
   });
 
+}
+
+
+function recoverPassword(){
+	var ema = emailLogin.value;
+
+	if(ema){
+		console.log("yaha ayo");
+	  firebase.auth().sendPasswordResetEmail(ema).then(function(){
+	  //email sent
+      document.getElementById("errorS").innerHTML="Reset Email has been sent. Please check your email."
+	  }, function(error){
+	  //error
+	  });
+	} else {
+	  document.getElementById("errorS").innerHTML="Please enter email address to reset password."
+	}
 }
 
 
 
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
-    console.log('User', firebaseUser);
-    window.location.href="../MovieDex.html";
+  	    var user = firebase.auth().currentUser;
+  	    var nam = userReg.value;
+        console.log(user);
+  	    if(nam){
+  	    	user.updateProfile({ displayName: name }).then(function() {
+     		// Update successful.
+    		}, function(error) {
+      		// An error happened.
+      		console.log('Error updating display name.', error);
+    		});
+  	    }
+    	
+
+    window.location.href="MovieDex.html";
   }
   else {
     console.log('User not logged in.');
   }
 });
+

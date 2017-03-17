@@ -1,134 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>MovieDex-Login</title>
 
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/css/index.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/general.css">
 
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
-    <title>Welcome to MovieDex!</title>
-    <style>
-    #FailMsg {
-      color: red;
-      font-weight: bold;
-      visibility: hidden;
-    }
-    </style>
+  <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+  <!--script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"-->
+  <style>
+  #signInFailMsg, #signUpFailMsg {
+    color: red;
+    font-weight: bold;
+    visibility: hidden;
+  }
+  </style>
 </head>
-<body>
-  <header class="navbar-inverse" role = "banner">
-      <div class="container">
-        <nav role= "navigation" >
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">MovieDex</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            </div>
-        </nav>
-    </div>
+<body class="bgimage">
+  <header>
+    <nav class="nav11">
+      <span class = "titlelogin"> WELCOME TO MOVIEDEX </span>
+    </nav>
   </header>
-<div class="jumbotron">
-  <div class="container">
-    <h1>Welcome to MovieDex!</h1>
-    <p id="FailMsg" style=""> Sign-In Failed: Please try again with a valid email and password. Or, create a new account.<p>
-  </div>
-</div>
-<div class="container">
-     	<div class="row">
- 			<div class="col-md-6 col-md-offset-3">
- 				<div class="panel panel-signIn">
- 					<div class="panel-heading">
- 						<div class="row">
- 							<div class="col-xs-6">
- 								<a href="#" class="active" id="signIn-form-tab">Sign In</a>
- 							</div>
- 							<div class="col-xs-6">
- 								<a href="#" id="signUp-form-tab">Sign Up</a>
- 							</div>
- 						</div>
- 						<hr>
- 					</div>
- 					<div class="panel-body">
- 						<div class="row">
- 							<div class="col-lg-12">
- 								<form id="signIn-form" action="" method="post" role="form" style="display: block;">
- 									<div class="form-group">
-                    <label for="userEmail" class="label">Email</label>
- 										<input type="text" name="userEmail" id="userEmail" tabindex="1" class="form-control input" placeholder="Email Address" value="">
- 									</div>
- 									<div class="form-group">
-                    <label for="passEmail" class="label">Password</label>
- 										<input type="password" name="passEmail" id="passEmail" tabindex="2" class="form-control input" placeholder="Password">
- 									</div>
- 									<div class="form-group ">
- 										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
- 										<label for="remember"> Remember Me</label>
- 									</div>
- 									<div class="form-group">
- 										<div class="row">
- 											<div class="col-sm-6 col-sm-offset-3">
- 												<input type="submit" name="signInBtn" id="signInBtn" tabindex="4" class="form-control btn btn-signIn" value="Sign In With Email">
-                        <br>
-                        <input type="submit" name="signInGoogBtn" id="signInGoogBtn" tabindex="5" class="form-control btn btn-signIn" value="Sign In With Google">
- 											</div>
- 										</div>
- 									</div>
- 									<div class="form-group">
- 										<div class="row">
- 											<div class="col-lg-12">
- 												<div class="text-center">
- 													<a href="bootstrap/forgotPass.html" tabindex="6" class="forgot-password">Forgot Password?</a>
- 												</div>
- 											</div>
- 										</div>
- 									</div>
- 								</form>
- 								<form id="signUp-form" action="" method="post" role="form" style="display: none;">
- 									<div class="form-group">
-                    <label for="user" class="label">Name</label>
- 										<input type="text" name="user" id="user" tabindex="1" class="form-control input" placeholder="Full Name" value="">
- 									</div>
- 									<div class="form-group">
-                    <label for="emailReg" class="label">Email Address</label>
- 										<input type="text" name="emailReg" id="emailReg" tabindex="2" class="form-control input" placeholder="Email Address" value="">
- 									</div>
- 									<div class="form-group">
-                    <label for="pass1" class="label">Password</label>
- 										<input type="password" name="pass1" id="pass1" tabindex="3" class="form-control input" data-type="password" placeholder="Enter Password">
- 									</div>
-                  <div class="form-group">
-                    <label for="pass2" class="label">Repeat Password</label>
- 										<input type="password" name="pass2" id="pass2" tabindex="4" class="form-control input" data-type="password" placeholder="Repeat Password">
- 									</div>
- 									<div class="form-group">
- 										<div class="row">
- 											<div class="col-sm-6 col-sm-offset-3">
- 												<input type="submit" name="signUp-submit" id="signUpBtn" tabindex="5" class="form-control btn btn-signUp" value="Sign Up">
- 											</div>
- 										</div>
- 									</div>
- 								</form>
- 							</div>
- 						</div>
- 					</div>
- 				</div>
- 			</div>
- 		</div>
-</div>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
-<script src="js/index2.js"></script>
+  <div class="signin-wrap">
+  <div class="signin-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+      <label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up">
+      <label for="tab-2" class="tab">Sign Up</label>
+
+    <div class="signin-form">
+      <div class="sign-in-htm">
+      <!--form action="viewmov.html" method="get"-->
+      <form action="#" method="get">
+        <div class="combine-all">
+          <label for="userEmail" class="label">Email</label>
+          <input id="userEmail" type="text" class="input">
+        </div>
+
+        <div class="combine-all">
+          <label for="passEmail" class="label">Password</label>
+          <input id="passEmail" type="password" class="input" data-type="password">
+        </div>
+
+        <div class="combine-all">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check">
+            <span class="icon"></span> Keep me Signed in</label>
+        </div>
+
+        <div class="combine-all">
+          <input id="signInBtn" type="submit" class="button" value="Sign In">
+        </div>
+        
+        <div class="combine-all">
+           <input id="signInGoogBtn" type="submit" class="button" value="Sign In With Google">
+        </div>
+        
+        <div class="combine-all">
+          <span style="color:red;" id="errorS"> </span>
+        </div>        
+
+        <div class="combine-all">
+          <p id="signInFailMsg" style=""> Sign-In Failed: Please try again with a valid email and password. Or, create a new account.<p>
+        </div>
+
+        <div class="hr"></div>
+        <div class="footer1 onHoverChange">
+          <a href="javascript:void(0)" onclick="recoverPassword()">Forgot Password?</a>
+        </div>
+      </form>
+      </div>
+      <div class="sign-up-htm">
+      <!-- form action="newmov.html" method="get" -->
+      <form action="#" method="get">
+        <div class="combine-all">
+          <label for="user" class="label">Name</label>
+          <input id="user" type="text" class="input">
+        </div>
+
+        <div class="combine-all">
+          <label for="emailReg" class="label">Email Address</label>
+          <input id="emailReg" type="text" class="input">
+        </div>
+
+        <div class="combine-all">
+          <label for="pass1" class="label">Password</label>
+          <input id="pass1" type="password" class="input" data-type="password">
+        </div>
+
+        <div class="combine-all">
+          <label for="pass2" class="label">Repeat Password</label>
+          <input id="pass2" type="password" class="input" data-type="password">
+        </div>
+
+        <div class="combine-all">
+          <input id="signUpBtn" type="submit" class="button" value="Sign Up">
+          <p id="signUpFailMsg" style=""> Sign-Up Failed: Please make sure email has not been used and passwords match.<p>
+        </div>
+
+        <div class="hr"></div>
+        <div class="footer1 onHoverChange">
+          <label for="tab-1">Already Member?</a>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="./js/index.min.js"></script>
 </body>
 </html>
+
