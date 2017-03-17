@@ -3,7 +3,7 @@
 All the files and project 5 files can be found inside Public/Project5 folder.
 
 Documentation:- MovieDex-Report.pdf
-Sign in/Sign up - index page\n
+Sign in/Sign up - index page/n
 Add movie tab to add the movies.\n
 My Movies tab to load all the added movies.\n
 Individual movie image are expandable by clicking to detail view.
