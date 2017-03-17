@@ -78,9 +78,9 @@ function signUp() {
   firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(result) {
     // The signed-in user info.
     user = result.user;
-    document.getElementById('signUpFailMsg').style.visibility = "hidden";
+    document.getElementById('FailMsg').style.visibility = "hidden";
     user.updateProfile({ displayName: regName }).then(function() {
-        window.location.href="MovieDex.html";      // Update successful.
+        window.location.href="../Project5/MovieDex.html";      // Update successful.
     }, function(error) {
       // An error happened.
       console.log('Error updating display name.', error);
@@ -125,7 +125,7 @@ function signInGoog() {
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
     console.log('User', firebaseUser);
-    window.location.href="../MovieDex.html";
+    window.location.href="../Project5/MovieDex.html";
   }
   else {
     console.log('User not logged in.');
