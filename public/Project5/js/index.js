@@ -39,7 +39,6 @@ window.onload = function() {
   if (googSignInBtn) {
     googSignInBtn.addEventListener('click', signInGoog);
   }
-
 };
 
 function signIn() {
@@ -77,8 +76,14 @@ function signUp() {
 
   firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(result) {
     // The signed-in user info.
+
    
     document.getElementById('signUpFailMsg').style.visibility = "hidden";
+
+
+    user = result.user;
+    document.getElementById('FailMsg').style.visibility = "hidden";
+ 
 
   }).catch(function(error) {
     // Handle Errors here.
