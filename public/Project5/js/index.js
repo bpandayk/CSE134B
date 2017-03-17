@@ -39,7 +39,6 @@ window.onload = function() {
   if (googSignInBtn) {
     googSignInBtn.addEventListener('click', signInGoog);
   }
-
 };
 
 function signIn() {
@@ -75,7 +74,6 @@ function signUp() {
   if (regPass != regPassCheck) {
     return console.log('Passwords do not match.');
   }
-
 
   firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).then(function(result) {
     // The signed-in user info.
@@ -123,8 +121,6 @@ function signInGoog() {
   });
 
 }
-
-
 
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
